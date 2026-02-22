@@ -76,8 +76,8 @@
     .typing::after {
       content: '|';
       color: #1e40af;
-      animation: blink 0.7s infinite;
-      margin-right: 2px;
+      animation: blink 0.9s infinite;
+      margin-right: 3px;
     }
     @keyframes blink {
       50% { opacity: 0; }
@@ -184,9 +184,9 @@
     AOS.init({ once: true, duration: 1000, easing: 'ease-out', offset: 120 });
   </script>
 
-  <!-- Full-page fast typewriter script -->
+  <!-- Slower typewriter script -->
   <script>
-    function typeWriter(element, text, speed = 10, callback = null) {
+    function typeWriter(element, text, speed = 18, callback = null) {
       element.classList.add('typing');
       element.innerHTML = '';
       let i = 0;
@@ -194,7 +194,6 @@
         if (i < text.length) {
           element.innerHTML += text.charAt(i);
           i++;
-          element.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Optional smooth scroll follow
         } else {
           clearInterval(interval);
           element.classList.remove('typing');
@@ -211,12 +210,12 @@
           el.dataset.typed = 'true';
 
           if (el.id === 'roles-list') {
-            // Type role items one by one
+            // Type role items one by one (slower chain)
             const items = el.querySelectorAll('li');
             let index = 0;
             function typeNext() {
               if (index < items.length) {
-                typeWriter(items[index], items[index].textContent.trim(), 8, () => {
+                typeWriter(items[index], items[index].textContent.trim(), 18, () => {
                   index++;
                   typeNext();
                 });
@@ -224,8 +223,9 @@
             }
             typeNext();
           } else {
-            // Normal text elements
-            typeWriter(el, text, 10);
+            // Normal text elements - slower typing
+            const speed = (el.tagName === 'H1' || el.tagName === 'H2') ? 15 : 18;
+            typeWriter(el, text, speed);
           }
         }
       });
