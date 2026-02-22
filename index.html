@@ -11,13 +11,13 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Caveat', 'Noto Nastaliq Urdu', cursive;
+      font-family: 'Caveat', 'Noto+Nastaliq+Urdu', cursive;
       background: #0a0f1c;
       color: #e0f7ff;
       line-height: 1.95;
       direction: rtl;
       text-align: center;
-      font-size: 3rem; /* 2× bigger – from 1.5rem */
+      font-size: 1.5rem; /* Back to 1.5rem as requested */
       min-height: 100vh;
     }
     body::before, body::after {
@@ -51,13 +51,13 @@
     }
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 11.5rem; /* 2× bigger – from 5.75rem */
+      font-size: 5.75rem;
       letter-spacing: 10px;
       margin-bottom: 30px;
     }
     header .subtitle {
       font-family: 'Caveat', cursive;
-      font-size: 5.2rem; /* 2× bigger – from 2.6rem */
+      font-size: 2.6rem;
       margin-bottom: 60px;
     }
     .hero-img {
@@ -71,14 +71,14 @@
     }
     h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 7.5rem; /* 2× bigger – from 3.75rem */
+      font-size: 3.75rem;
       color: #00f0ff;
       margin: 0 0 50px;
       text-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
       letter-spacing: 5px;
     }
     .bio {
-      font-size: 3.6rem; /* 2× bigger – from 1.8rem */
+      font-size: 1.8rem;
       max-width: 1000px;
       margin: 0 auto 60px;
       line-height: 2.4;
@@ -119,7 +119,7 @@
       color: #00f0ff;
       padding: 70px;
       margin-top: 140px;
-      font-size: 3.2rem; /* 2× bigger – from 1.6rem */
+      font-size: 1.6rem;
       border-top: 12px solid #3b82f6;
       box-shadow: 0 -20px 60px rgba(0, 240, 255, 0.4);
       text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
@@ -233,15 +233,11 @@
     }
 
     function startFullPageTyping() {
-      // Hero Title
       typeWriter('hero-title', document.getElementById('hero-title').textContent.trim(), 20, () => {
-        // Hero Subtitle
         typeWriter('hero-subtitle', document.getElementById('hero-subtitle').textContent.trim(), 20, () => {
-          // Intro Section
           document.getElementById('intro').style.display = 'block';
           typeWriter('intro-title', document.getElementById('intro-title').textContent.trim(), 20, () => {
             typeWriter('intro-text', document.getElementById('intro-text').textContent.trim(), 25, () => {
-              // Roles Section
               document.getElementById('roles').style.display = 'block';
               typeWriter('roles-title', document.getElementById('roles-title').textContent.trim(), 20, () => {
                 const roles = [
@@ -257,16 +253,13 @@
                       typeNextRole();
                     });
                   } else {
-                    // Media Section
                     document.getElementById('media').style.display = 'block';
                     typeWriter('media-title', document.getElementById('media-title').textContent.trim(), 20, () => {
                       typeWriter('media-text', document.getElementById('media-text').textContent.trim(), 25, () => {
-                        // Services Section
                         document.getElementById('services').style.display = 'block';
                         typeWriter('services-title', document.getElementById('services-title').textContent.trim(), 20, () => {
                           typeWriter('services-text1', document.getElementById('services-text1').textContent.trim(), 25, () => {
                             typeWriter('services-text2', document.getElementById('services-text2').textContent.trim(), 25, () => {
-                              // Footer
                               document.getElementById('footer').style.display = 'block';
                               typeWriter('footer-doa', document.getElementById('footer-doa').textContent.trim(), 25, () => {
                                 typeWriter('footer-copy', document.getElementById('footer-copy').textContent.trim(), 25);
