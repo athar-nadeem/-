@@ -3,92 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد اطہر ندیم - فورٹ عباس</title>
+    <meta name="description" content="محمد اطہر ندیم - فورٹ عباس کے ممتاز سیاسی و سماجی رہنما۔ علاقائی ترقی اور کمیونٹی خدمت کے لیے وقف۔">
+    <meta name="keywords" content="محمد اطہر ندیم, فورٹ عباس, سیاسی رہنما, سماجی کارکن, غلہ منڈی, جناح کلب, ٹی وی چینل 5">
+    <title>محمد اطہر ندیم - فورٹ عباس | رہنما و کارکن</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Fonts: Noto Nastaliq Urdu -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(to right, #006400, #228B22); color: white; text-align: center; padding: 100px 20px; }
-        h1, h2 { margin: 0; }
-        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; background: white; margin-bottom: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .hero { font-size: 1.5em; margin-bottom: 15px; }
-        ul { list-style-type: none; padding: 0; }
-        li { background: #f9f9f9; margin: 15px 0; padding: 20px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
-        img { max-width: 100%; height: auto; border-radius: 15px; margin: 30px auto; display: block; box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
-        .photo-pair { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
-        .photo-pair img { width: 48%; min-width: 300px; }
-        footer { background: #006400; color: white; text-align: center; padding: 40px; margin-top: 50px; font-size: 1.1em; }
-        @media (max-width: 768px) { section { padding: 40px 15px; } .photo-pair img { width: 100%; } }
+        body {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .navbar {
+            background: linear-gradient(to right, #006400, #228B22) !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 100, 0, 0.6), rgba(34, 139, 34, 0.6)), url('images/hero-bg.jpg'); /* اگر hero background چاہیں تو تصویر تبدیل کریں */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #006400;
+            font-weight: bold;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-header {
+            background: #228B22;
+            color: white;
+            font-weight: bold;
+        }
+        .profile-img {
+            width: 220px;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        footer {
+            background: #006400;
+            color: white;
+            padding: 40px 0;
+        }
+        .btn-custom {
+            background: #228B22;
+            border: none;
+        }
+        .btn-custom:hover {
+            background: #006400;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 100px 0; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>محمد اطہر ندیم</h1>
-        <p class="hero">سیاسی، سماجی رہنما، فعال کارکن اور قابل اعتماد شخصیت – فورٹ عباس</p>
-        <p>فورٹ عباس کی ترقی، کمیونٹی کی خدمت، لوگوں کی فلاح اور علاقائی مسائل کے حل کے لیے وقف ایک ایسی شخصیت جو ہمیشہ لوگوں کے ساتھ کھڑی رہتی ہے اور ان کی آواز بنتی ہے۔</p>
-        <img src="/father.jpg" alt="محمد اطہر ندیم کی مرکزی تصویر" width="280">
-    </header>
 
-    <section id="about">
-        <h2>تعارف اور ابتدائی زندگی</h2>
-        <p>محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں ایک متوسط گھرانے میں پیدا ہوئے۔ بچپن سے ہی ان میں سماجی ذمہ داری، لوگوں کی مدد اور علاقے کی بہتری کا جذبہ موجود تھا۔ وہ علاقے کے مسائل کو گہرائی سے سمجھتے ہیں اور ہمیشہ ان کے حل کے لیے آگے بڑھتے ہیں۔ ان کی شخصیت میں سادگی، شائستگی، ایمانداری، دوسروں کے لیے قربانی اور لوگوں کی خدمت کا جذبہ انتہائی نمایاں ہے۔ وہ ہر طبقے کے لوگوں سے محبت اور احترام سے پیش آتے ہیں اور ان کی خوشی کو اپنی خوشی سمجھتے ہیں۔</p>
-        <div class="photo-pair">
-            <img src="/father%201.jpeg" alt="محمد اطہر ندیم صاحب کی ابتدائی زندگی کی تصویر 1">
-            <img src="/father%202.jpeg" alt="محمد اطہر ندیم صاحب کی ابتدائی زندگی کی تصویر 2">
+    <!-- Navbar (Sticky) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">محمد اطہر ندیم</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">تعارف</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#roles">عہدے</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#political">سیاسی جدوجہد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">رابطہ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="images/father.jpg" alt="محمد اطہر ندیم" class="profile-img rounded-circle mb-4">
+            <h1>محمد اطہر ندیم</h1>
+            <p class="lead fs-3">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
+            <p class="fs-4">علاقے کی ترقی، سماجی فلاح اور لوگوں کی خدمت کے لیے وقفِ زندگی</p>
         </div>
     </section>
 
-    <section id="education">
-        <h2>تعلیم اور خدمات کا آغاز</h2>
-        <p>تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا۔ یہ سفر آج تک جاری ہے اور دن بدن مزید مضبوط ہو رہا ہے۔ وہ تعلیم، صحت، مذہبی خدمات، علاقائی ترقی، کسانوں کی فلاح اور لوگوں کے حقوق کے مختلف شعبوں میں مسلسل کام کر رہے ہیں۔ ان کی کاوشیں علاقے کے لوگوں کے لیے ایک مثال ہیں اور وہ ہمیشہ نئی نسل کو بھی خدمت کا درس دیتے ہیں۔</p>
-    </section>
-
-    <section id="roles">
-        <h2>اہم عہدے اور ذمہ داریاں</h2>
-        <p>محمد اطہر ندیم صاحب متعدد اہم اور ذمہ دارانہ عہدوں پر فائز رہ چکے ہیں اور اب بھی فعال ہیں۔ ان کے عہدے ان کی قابلیت، لوگوں کے اعتماد اور علاقے کی خدمت کی عکاسی کرتے ہیں:</p>
-        <ul>
-            <li>☆ جنرل سیکرٹری جناح کلب فورٹ عباس – کلب کی سرگرمیوں، سماجی کاموں اور تفریحی پروگرامز کی نگرانی اور انعقاد</li>
-            <li>☆ رپورٹر ٹی وی چینل 5 – علاقائی مسائل، ترقیاتی کاموں، لوگوں کی مشکلات اور خوشخبریوں کی کوریج اور نشر</li>
-            <li>☆ معاون نمبردار چیک نمبر 211/9R – زمینوں، مقامی امور، کسانوں کی مدد اور انتظامی کاموں میں معاونت</li>
-            <li>☆ ممبر مارکیٹ کمیٹی فورٹ عباس – بازار کی بہتری، تاجروں کے مسائل کا حل اور منڈی کی شفافیت</li>
-            <li>☆ فنانس سیکرٹری فورٹ عباس – مالی امور کی نگرانی، بجٹ اور شفاف استعمال کی ذمہ داری</li>
-            <li>☆ چیئرمین عشر زکوٰۃ کمیٹی – مستحقین تک امداد کی منصفانہ تقسیم اور زکوٰۃ کے کاموں کی نگرانی</li>
-            <li>☆ زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس – کسانوں کی فصلوں کی خرید و فروخت میں اہم کردار، ریٹس کی شفافیت اور علاقے کی معیشت کو سپورٹ</li>
-            <li>☆ مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R – دینی تعلیم، بچوں کی تربیت اور مدرسہ کی انتظامی ذمہ داریاں</li>
-        </ul>
-        <div class="photo-pair">
-            <img src="/father%203.jpeg" alt="محمد اطہر ندیم صاحب عہدوں پر فائز">
-            <img src="/father%204.jpeg" alt="محمد اطہر ندیم صاحب کی خدمات کی تصویر">
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">تعارف اور ابتدائی زندگی</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p>محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ ایک سادہ گھرانے سے تعلق رکھنے والے اطہر ندیم نے محنت، ایمانداری اور خدمت کا جذبہ ابتدائی زندگی سے اپنایا۔ 2005ء سے علاقائی سماجی اور سیاسی خدمات میں فعال ہیں۔</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="images/father1.jpg" alt="محمد اطہر ندیم" class="img-fluid rounded shadow">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2>دیہات اور علاقے کے لیے خدمات</h2>
-        <p>محمد اطہر ندیم صاحب ایک ایسے سماجی کارکن ہیں جو لوگوں کی خدمت کو اپنا مشن سمجھتے ہیں۔ ان کی شخصیت میں شائستگی، سادگی، ایمانداری اور دوسروں کی مدد کا جذبہ انتہائی نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے قبرستان کے لیے دو کنال زمین عطیہ کی ہے تاکہ علاقے کے لوگوں کو دفن کے لیے مناسب جگہ مل سکے۔ مسجد کی تعمیر میں مالی اور عملی دونوں سطحوں پر حصہ لیا ہے تاکہ نمازیوں کو بہتر ماحول ملے۔ مدرسہ تعلیم القرآن کے لیے بھی زمین عطیہ کی تاکہ بچے دینی اور اخلاقی تعلیم حاصل کر سکیں۔ وہ ہر مشکل وقت میں لوگوں کے ساتھ کھڑے رہتے ہیں، ان کے مسائل سنتے ہیں اور انہیں حل کرنے کی پوری کوشش کرتے ہیں۔ ان کی خدمات علاقے کی مذہبی، سماجی، معاشی اور تعلیمی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں اور لوگ انہیں ایک قابل اعتماد اور محنتی شخصیت سمجھتے ہیں۔</p>
-        <div class="photo-pair">
-            <img src="/father%205.jpeg" alt="سماجی خدمات کی تصویر 1">
-            <img src="/father%206.jpeg" alt="سماجی خدمات کی تصویر 2">
+    <!-- Roles Section -->
+    <section id="roles" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">اہم عہدے اور ذمہ داریاں</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="card"><div class="card-body"><ul class="list-unstyled"><li>☆ جنرل سیکرٹری جناح کلب فورٹ عباس</li></ul></div></div></div>
+                <div class="col-md-4"><div class="card"><div class="card-body"><ul class="list-unstyled"><li>☆ رپورٹر ٹی وی چینل 5</li></ul></div></div></div>
+                <!-- باقی عہدے اسی طرح cards میں شامل کریں، یا ایک ہی کارڈ میں لسٹ رکھیں -->
+                <!-- مکمل لسٹ یہاں شامل کر سکتے ہیں -->
+                <div class="col-md-4"><div class="card"><div class="card-body"><ul class="list-unstyled">
+                    <li>☆ معاون نمبردار چیک نمبر 211/9R</li>
+                    <li>☆ ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+                    <li>☆ فنانس سیکرٹری فورٹ عباس</li>
+                    <li>☆ چیئرمین عشر زکوٰۃ کمیٹی</li>
+                    <li>☆ زمزم کمیشن ایجنٹ غلہ منڈی</li>
+                    <li>☆ مہتمم مدرسہ تعلیم القرآن</li>
+                </ul></div></div></div>
+            </div>
         </div>
     </section>
 
-    <section id="journalism">
-        <h2>صحافت اور میڈیا میں کردار</h2>
-        <p>2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ انہوں نے علاقائی مسائل، ترقیاتی کاموں، لوگوں کی مشکلات اور خوشخبریوں کو میڈیا تک پہنچانے میں اہم کردار ادا کیا۔ اب وہ ٹی وی چینل 5 کے رپورٹر بھی ہیں اور فورٹ عباس کے مسائل کو قومی سطح پر اجاگر کرتے ہیں۔ ان کی صحافت شفاف، غیر جانبدار اور عوام کی فلاح کے لیے وقف ہے۔ وہ ہمیشہ حق کی بات کرتے ہیں اور لوگوں کی آواز بنتے ہیں۔</p>
-        <img src="/father%207.jpg" alt="محمد اطہر ندیم صاحب صحافت کے دوران">
-    </section>
-
-    <section id="extra">
-        <h2>اضافی تصاویر اور خدمات</h2>
-        <p>محمد اطہر ندیم صاحب کی زندگی اور خدمات کا ایک اہم پہلو یہ ہے کہ وہ نہ صرف عہدوں پر فائز رہے بلکہ عملی طور پر لوگوں کی مدد کرتے رہے۔ ان کی کاوشیں علاقے میں امن، ترقی اور بھائی چارے کو فروغ دیتی ہیں۔</p>
-        <div class="photo-pair">
-            <img src="/image%20(20).jpg" alt="اضافی تصویر اور خدمات کی عکاسی">
+    <!-- Services & Sacrifices -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="section-title">دیہات کے لیے خدمات اور قربانیاں</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header">زمین عطیہ</div>
+                        <div class="card-body">
+                            <p>قبرستان کے لیے <strong>دو کنال</strong> ذاتی زمین وقف کی۔</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header">مسجد اور مدرسہ</div>
+                        <div class="card-body">
+                            <p>مسجد کی تعمیر میں حصہ اور مدرسہ تعلیم القرآن کے لیے زمین عطیہ۔</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header">کسانوں کی خدمت</div>
+                        <div class="card-body">
+                            <p>غلہ منڈی میں کمیشن ایجنٹ کے طور پر کسانوں کی مدد۔</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <img src="images/father2.jpg" alt="سماجی خدمات" class="img-fluid rounded shadow" style="max-height: 400px;">
+            </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <h2>رابطہ کریں</h2>
-        <p>اگر آپ کوئی مشورہ، مدد، تعاون یا کوئی سوال کرنا چاہیں تو رابطہ کریں۔ آپ کی رائے اور تعاون ہمارے لیے بہت اہم ہے۔</p>
-        <p>فون: 03008694666</p>
-        <p>فون: 03458694666</p>
-        <p>ای میل: [atharnadeem@example.com] (اگر ای میل ہے تو یہاں تبدیل کریں)</p>
+    <!-- Political -->
+    <section id="political" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">سیاسی خدمات اور جدوجہد</h2>
+            <p class="lead text-center">علاقائی ترقی، انصاف اور عوامی مسائل کے حل کے لیے مسلسل محنت۔ لوگوں کے حقوق کی آواز اٹھانا اور امن کے فروغ میں کلیدی کردار۔</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">رابطہ کریں</h2>
+            <div class="text-center">
+                <p class="fs-4">مشورہ، مدد یا تعاون کے لیے رابطہ فرمائیں</p>
+                <a href="tel:03008694666" class="btn btn-custom btn-lg m-2">فون: 0300-8694666</a>
+                <a href="tel:03458694666" class="btn btn-custom btn-lg m-2">فون: 0345-8694666</a>
+                <a href="https://wa.me/923008694666" target="_blank" class="btn btn-success btn-lg m-2">واٹس ایپ پر رابطہ</a>
+                <p class="mt-3">ای میل: atharnadeem@example.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 محمد اطہر ندیم - تمام حقوق محفوظ ہیں۔</p>
+            <p>ڈیزائن: GitHub پر آپ کا بیٹا Athar</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
