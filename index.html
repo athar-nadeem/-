@@ -1,230 +1,186 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="محمد اطہر ندیم - فورٹ عباس کے ممتاز سیاسی و سماجی رہنما اور فعال کارکن۔ علاقے کی خدمت اور ترقی کے لیے وقف۔">
-    <title>محمد اطہر ندیم - فورٹ عباس | رہنما و کارکن</title>
+    <meta name="description" content="محمد اطہر ندیم - فورٹ عباس کے ممتاز سیاسی و سماجی رہنما۔ علاقائی خدمت اور ترقی کے لیے وقف۔">
+    <title>محمد اطہر ندیم | فورٹ عباس</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Noto Nastaliq Urdu + Poppins for modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- AOS for animations -->
+    <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        urdu: ['Noto Nastaliq Urdu', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#006400',
+                        secondary: '#228B22',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --primary: #006400;
-            --secondary: #228B22;
-            --light: #f8f9fa;
-        }
-        body {
-            font-family: 'Noto Nastaliq Urdu', 'Poppins', sans-serif;
-            background: var(--light);
-            color: #333;
-            overflow-x: hidden;
-        }
-        .navbar {
-            background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-            font-weight: 600;
-        }
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            background: linear-gradient(rgba(0,100,0,0.65), rgba(34,139,34,0.65)), url('father.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 50px;
-        }
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-        .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,100,0,0.2);
-        }
-        .card-img-top {
-            height: 220px;
-            object-fit: cover;
-        }
-        .gallery .carousel-item img {
-            height: 500px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-        footer {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            padding: 60px 0 30px;
-        }
-        .btn-custom {
-            background: var(--secondary);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        .btn-custom:hover {
-            background: var(--primary);
-        }
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 3.5rem; }
-            .gallery .carousel-item img { height: 400px; }
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero { min-height: 600px; }
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; }
+        .hero-bg { background: linear-gradient(rgba(0,100,0,0.7), rgba(34,139,34,0.7)), url('father.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="fixed top-4 left-4 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg">
+        🌙
+    </button>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">محمد اطہر ندیم</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">تعارف</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#roles">عہدے</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">تصاویر</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">رابطہ</a></li>
-                </ul>
-            </div>
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-40 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">محمد اطہر ندیم</a>
+            <ul class="hidden md:flex space-x-8 space-x-reverse">
+                <li><a href="#about" class="hover:text-secondary transition">تعارف</a></li>
+                <li><a href="#roles" class="hover:text-secondary transition">عہدے</a></li>
+                <li><a href="#services" class="hover:text-secondary transition">خدمات</a></li>
+                <li><a href="#gallery" class="hover:text-secondary transition">تصاویر</a></li>
+                <li><a href="#contact" class="hover:text-secondary transition">رابطہ</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero" data-aos="fade-up">
-        <div class="container">
-            <h1>محمد اطہر ندیم</h1>
-            <p class="lead fs-2 mb-4">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
-            <p class="fs-4">علاقے کی ترقی، سماجی فلاح اور لوگوں کی خدمت کے لیے وقفِ زندگی</p>
-            <a href="#contact" class="btn btn-custom btn-lg mt-4">رابطہ کریں</a>
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white pt-20">
+        <div class="container mx-auto px-6" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 urdu-text">محمد اطہر ندیم</h1>
+            <p class="text-2xl md:text-4xl mb-8">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">علاقے کی ترقی، سماجی فلاح اور لوگوں کی خدمت کے لیے وقفِ زندگی</p>
+            <a href="#contact" class="mt-10 inline-block bg-secondary text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-primary transition">رابطہ کریں</a>
         </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="py-5">
-        <div class="container" data-aos="fade-right">
-            <h2 class="section-title text-center">تعارف اور ابتدائی زندگی</h2>
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <p class="fs-5">محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر) میں پیدا ہوئے۔ سادگی، محنت اور خدمت کا جذبہ ان کی شخصیت کا حصہ ہے۔ 2005ء سے علاقے کی سماجی اور سیاسی خدمات میں فعال ہیں۔</p>
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6" data-aos="fade-right">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary urdu-text">تعارف اور ابتدائی زندگی</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed urdu-text">محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ 1978ء میں چیک نمبر 211/9R میں پیدا ہوئے۔ محنت، ایمانداری اور خدمت کا جذبہ ان کی شخصیت کا حصہ ہے۔ 2005ء سے علاقائی خدمات میں فعال ہیں۔</p>
                 </div>
-                <div class="col-lg-6">
-                    <img src="father 2.jpeg" alt="محمد اطہر ندیم" class="img-fluid rounded-4 shadow-lg card-img-top">
-                </div>
+                <img src="father 2.jpeg" alt="محمد اطہر ندیم" class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/5]">
             </div>
         </div>
     </section>
 
     <!-- Roles -->
-    <section id="roles" class="py-5 bg-light">
-        <div class="container" data-aos="fade-left">
-            <h2 class="section-title text-center">اہم عہدے اور ذمہ داریاں</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><ul class="list-unstyled fs-5"><li>☆ جنرل سیکرٹری جناح کلب فورٹ عباس</li><li>☆ رپورٹر ٹی وی چینل 5</li><li>☆ معاون نمبردار چیک نمبر 211/9R</li></ul></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><ul class="list-unstyled fs-5"><li>☆ ممبر مارکیٹ کمیٹی فورٹ عباس</li><li>☆ فنانس سیکرٹری فورٹ عباس</li><li>☆ چیئرمین عشر زکوٰۃ کمیٹی</li></ul></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><ul class="list-unstyled fs-5"><li>☆ زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس</li><li>☆ مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li></ul></div></div></div>
+    <section id="roles" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6" data-aos="fade-left">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary urdu-text">اہم عہدے اور ذمہ داریاں</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                    <ul class="space-y-4 text-lg urdu-text">
+                        <li>☆ جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+                        <li>☆ رپورٹر ٹی وی چینل 5</li>
+                        <li>☆ معاون نمبردار چیک نمبر 211/9R</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                    <ul class="space-y-4 text-lg urdu-text">
+                        <li>☆ ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+                        <li>☆ فنانس سیکرٹری فورٹ عباس</li>
+                        <li>☆ چیئرمین عشر زکوٰۃ کمیٹی</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                    <ul class="space-y-4 text-lg urdu-text">
+                        <li>☆ زمزم کمیشن ایجنٹ غلہ منڈی</li>
+                        <li>☆ مہتمم مدرسہ تعلیم القرآن</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-5">
-        <div class="container" data-aos="zoom-in">
-            <h2 class="section-title text-center">خدمات اور قربانیاں</h2>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="card"><img src="father 3.jpeg" class="card-img-top" alt="خدمات"><div class="card-body"><h5 class="card-title">زمین عطیہ</h5><p>قبرستان کے لیے دو کنال ذاتی زمین وقف کی۔</p></div></div></div>
-                <div class="col-md-4"><div class="card"><img src="father 4.jpeg" class="card-img-top" alt="مسجد"><div class="card-body"><h5 class="card-title">مسجد و مدرسہ</h5><p>مسجد تعمیر اور مدرسہ تعلیم القرآن کے لیے زمین۔</p></div></div></div>
-                <div class="col-md-4"><div class="card"><img src="father 5.jpeg" class="card-img-top" alt="کسان"><div class="card-body"><h5 class="card-title">کسانوں کی خدمت</h5><p>غلہ منڈی میں کمیشن ایجنٹ کے طور پر مدد۔</p></div></div></div>
+    <section id="services" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary urdu-text">خدمات اور قربانیاں</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h3 class="text-2xl font-bold mb-4 urdu-text">زمین عطیہ</h3>
+                    <p class="urdu-text">قبرستان کے لیے دو کنال ذاتی زمین وقف کی۔</p>
+                    <img src="father 3.jpeg" alt="" class="mt-6 rounded-xl w-full h-48 object-cover">
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h3 class="text-2xl font-bold mb-4 urdu-text">مسجد و مدرسہ</h3>
+                    <p class="urdu-text">مسجد تعمیر اور مدرسہ کے لیے زمین عطیہ۔</p>
+                    <img src="father 4.jpeg" alt="" class="mt-6 rounded-xl w-full h-48 object-cover">
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h3 class="text-2xl font-bold mb-4 urdu-text">کسانوں کی خدمت</h3>
+                    <p class="urdu-text">غلہ منڈی میں کمیشن ایجنٹ کے طور پر مدد۔</p>
+                    <img src="father 5.jpeg" alt="" class="mt-6 rounded-xl w-full h-48 object-cover">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Carousel -->
-    <section id="gallery" class="py-5 bg-light">
-        <div class="container" data-aos="fade-up">
-            <h2 class="section-title text-center">تصاویر</h2>
-            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="father 6.jpeg" class="d-block w-100" alt="تصویر 6"></div>
-                    <div class="carousel-item"><img src="father 7.jpeg" class="d-block w-100" alt="تصویر 7"></div>
-                    <div class="carousel-item"><img src="image(20).jpg" class="d-block w-100" alt="تصویر 20"></div>
-                    <div class="carousel-item"><img src="father.jpeg" class="d-block w-100" alt="تصویر مرکزی"></div>
+    <section id="gallery" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary urdu-text">تصاویر</h2>
+            <div id="carousel" class="relative">
+                <div class="carousel-inner flex overflow-hidden snap-x snap-mandatory">
+                    <!-- Images will be added via JS or static -->
+                    <img src="father 6.jpeg" class="snap-center w-full flex-shrink-0 object-cover h-96 md:h-[600px] rounded-2xl" alt="">
+                    <img src="father 7.jpeg" class="snap-center w-full flex-shrink-0 object-cover h-96 md:h-[600px] rounded-2xl" alt="">
+                    <img src="image(20).jpg" class="snap-center w-full flex-shrink-0 object-cover h-96 md:h-[600px] rounded-2xl" alt="">
+                    <img src="father.jpeg" class="snap-center w-full flex-shrink-0 object-cover h-96 md:h-[600px] rounded-2xl" alt="">
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-5">
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="section-title">رابطہ کریں</h2>
-            <p class="fs-4 mb-4">کوئی بھی مشورہ، مدد یا تعاون چاہیے تو رابطہ فرمائیں</p>
-            <a href="tel:03008694666" class="btn btn-custom btn-lg m-2">0300-8694666</a>
-            <a href="tel:03458694666" class="btn btn-custom btn-lg m-2">0345-8694666</a>
-            <a href="https://wa.me/923008694666" target="_blank" class="btn btn-success btn-lg m-2">واٹس ایپ</a>
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-8 text-primary urdu-text">رابطہ کریں</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:03008694666" class="bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary transition">0300-8694666</a>
+                <a href="https://wa.me/923008694666" target="_blank" class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">واٹس ایپ</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 محمد اطہر ندیم - تمام حقوق محفوظ</p>
-            <p>ڈیزائن: آپ کا بیٹا Athar | Inspired by modern portfolios</p>
-        </div>
+    <footer class="bg-gradient-to-r from-primary to-secondary text-white py-12 text-center">
+        <p>&copy; 2026 محمد اطہر ندیم - تمام حقوق محفوظ</p>
+        <p class="mt-2">ڈیزائن: آپ کا بیٹا Athar</p>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+
+    <script>
+        // Dark Mode Toggle
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+        });
+    </script>
+
 </body>
 </html>
