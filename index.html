@@ -202,6 +202,9 @@
     <p id="footer-copy">© 2026 – تیار کردہ: athar-nadeem</p>
   </footer>
 
+  <!-- Audio for typing sound -->
+  <audio id="typeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-typewriter-keys-typing-1387.mp3" preload="auto"></audio>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -212,24 +215,32 @@
     });
   </script>
 
-  <!-- Full Page Live Typing Chain -->
+  <!-- Full Page Live Typing with Sound -->
   <script>
+    const typeSound = document.getElementById('typeSound');
+
     function typeWriter(elementId, text, speed = 25, callback = null) {
       const el = document.getElementById(elementId);
       if (!el) return;
       el.classList.add('typing');
       el.innerHTML = '';
       let i = 0;
-      const interval = setInterval(() => {
+
+      function typeNextChar() {
         if (i < text.length) {
           el.innerHTML += text.charAt(i);
+          // Play typing sound on each character (short clip)
+          typeSound.currentTime = 0;
+          typeSound.play().catch(() => {}); // Ignore autoplay errors
           i++;
+          setTimeout(typeNextChar, speed);
         } else {
-          clearInterval(interval);
           el.classList.remove('typing');
+          typeSound.pause();
           if (callback) callback();
         }
-      }, speed);
+      }
+      typeNextChar();
     }
 
     function startFullPageTyping() {
@@ -247,20 +258,14 @@
               document.getElementById('roles').style.display = 'block';
               typeWriter('roles-title', document.getElementById('roles-title').textContent.trim(), 20, () => {
                 const roles = [
-                  {id: 'role-1', text: document.getElementById('role-1').textContent.trim()},
-                  {id: 'role-2', text: document.getElementById('role-2').textContent.trim()},
-                  {id: 'role-3', text: document.getElementById('role-3').textContent.trim()},
-                  {id: 'role-4', text: document.getElementById('role-4').textContent.trim()},
-                  {id: 'role-5', text: document.getElementById('role-5').textContent.trim()},
-                  {id: 'role-6', text: document.getElementById('role-6').textContent.trim()},
-                  {id: 'role-7', text: document.getElementById('role-7').textContent.trim()},
-                  {id: 'role-8', text: document.getElementById('role-8').textContent.trim()}
+                  'role-1', 'role-2', 'role-3', 'role-4', 'role-5', 'role-6', 'role-7', 'role-8'
                 ];
                 let idx = 0;
                 function typeNextRole() {
                   if (idx < roles.length) {
-                    document.getElementById(roles[idx].id).style.display = 'list-item';
-                    typeWriter(roles[idx].id, roles[idx].text, 25, () => {
+                    const roleEl = document.getElementById(roles[idx]);
+                    roleEl.style.display = 'list-item';
+                    typeWriter(roles[idx], roleEl.textContent.trim(), 25, () => {
                       idx++;
                       typeNextRole();
                     });
@@ -296,15 +301,11 @@
       });
     }
 
-    // Start typing on page load
     window.onload = function() {
-      // Hide all sections and footer initially
       document.querySelectorAll('section, footer').forEach(el => el.style.display = 'none');
-      // Start the full page typing chain
       startFullPageTyping();
     };
   </script>
 
 </body>
 </html>
-
