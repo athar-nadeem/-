@@ -138,7 +138,7 @@
   <div class="container">
 
     <!-- Introduction -->
-    <section data-aos="fade-up" data-aos-duration="1100">
+    <section id="intro" data-aos="fade-up" data-aos-duration="1100">
       <h2 id="intro-title">تعارف اور ابتدائی زندگی</h2>
       <p class="bio" id="intro-text">
         محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔ وہ ایک سمجھدار، شائستہ اور قابل اعتماد شخصیت ہیں جن کی زندگی خدمت خلق سے بھری پڑی ہے۔
@@ -150,7 +150,7 @@
     </section>
 
     <!-- Roles -->
-    <section data-aos="fade-up" data-aos-duration="1100">
+    <section id="roles" data-aos="fade-up" data-aos-duration="1100">
       <h2 id="roles-title">اہم عہدے اور ذمہ داریاں</h2>
       <ul class="roles" id="roles-list">
         <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
@@ -169,7 +169,7 @@
     </section>
 
     <!-- Media -->
-    <section data-aos="fade-up" data-aos-duration="1100">
+    <section id="media" data-aos="fade-up" data-aos-duration="1100">
       <h2 id="media-title">صحافت اور میڈیا میں کردار</h2>
       <p class="bio" id="media-text">
         2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
@@ -181,7 +181,7 @@
     </section>
 
     <!-- Services -->
-    <section data-aos="fade-up" data-aos-duration="1100">
+    <section id="services" data-aos="fade-up" data-aos-duration="1100">
       <h2 id="services-title">دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
       <p class="bio" id="services-text1">
         محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
@@ -208,9 +208,11 @@
     });
   </script>
 
-  <!-- Typewriter Effect - Someone is typing it live -->
+  <!-- Fixed & Working Typewriter Chain -->
   <script>
-    function typeWriter(el, text, speed = 25, callback = null) {
+    function typeWriter(elementId, text, speed = 25, callback = null) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
       el.classList.add('typing');
       el.innerHTML = '';
       let i = 0;
@@ -227,45 +229,43 @@
     }
 
     function startChain() {
-      // Hero Title & Subtitle
-      typeWriter(document.getElementById('hero-title'), document.getElementById('hero-title').textContent.trim(), 20, () => {
-        typeWriter(document.getElementById('hero-subtitle'), document.getElementById('hero-subtitle').textContent.trim(), 20, () => {
-
+      // Hero Title
+      typeWriter('hero-title', document.getElementById('hero-title').textContent.trim(), 20, () => {
+        // Hero Subtitle
+        typeWriter('hero-subtitle', document.getElementById('hero-subtitle').textContent.trim(), 20, () => {
           // Intro Section
-          document.getElementById('intro').classList.add('active');
-          typeWriter(document.getElementById('intro-title'), document.getElementById('intro-title').textContent.trim(), 20, () => {
-            typeWriter(document.getElementById('intro-text'), document.getElementById('intro-text').textContent.trim(), 25, () => {
-
+          document.getElementById('intro').style.display = 'block';
+          typeWriter('intro-title', document.getElementById('intro-title').textContent.trim(), 20, () => {
+            typeWriter('intro-text', document.getElementById('intro-text').textContent.trim(), 25, () => {
               // Roles Section
-              document.getElementById('roles').classList.add('active');
-              typeWriter(document.getElementById('roles-title'), document.getElementById('roles-title').textContent.trim(), 20, () => {
+              document.getElementById('roles').style.display = 'block';
+              typeWriter('roles-title', document.getElementById('roles-title').textContent.trim(), 20, () => {
                 const lis = document.querySelectorAll('#roles-list li');
                 let idx = 0;
-                function nextLi() {
+                function typeNextLi() {
                   if (idx < lis.length) {
-                    typeWriter(lis[idx], lis[idx].textContent.trim(), 25, () => {
+                    lis[idx].style.display = 'block';
+                    typeWriter(lis[idx].id || 'temp-id-' + idx, lis[idx].textContent.trim(), 25, () => {
                       idx++;
-                      nextLi();
+                      typeNextLi();
                     });
                   } else {
-
                     // Media Section
-                    document.getElementById('media').classList.add('active');
-                    typeWriter(document.getElementById('media-title'), document.getElementById('media-title').textContent.trim(), 20, () => {
-                      typeWriter(document.getElementById('media-text'), document.getElementById('media-text').textContent.trim(), 25, () => {
-
+                    document.getElementById('media').style.display = 'block';
+                    typeWriter('media-title', document.getElementById('media-title').textContent.trim(), 20, () => {
+                      typeWriter('media-text', document.getElementById('media-text').textContent.trim(), 25, () => {
                         // Services Section
-                        document.getElementById('services').classList.add('active');
-                        typeWriter(document.getElementById('services-title'), document.getElementById('services-title').textContent.trim(), 20, () => {
-                          typeWriter(document.getElementById('services-text1'), document.getElementById('services-text1').textContent.trim(), 25, () => {
-                            typeWriter(document.getElementById('services-text2'), document.getElementById('services-text2').textContent.trim(), 25);
+                        document.getElementById('services').style.display = 'block';
+                        typeWriter('services-title', document.getElementById('services-title').textContent.trim(), 20, () => {
+                          typeWriter('services-text1', document.getElementById('services-text1').textContent.trim(), 25, () => {
+                            typeWriter('services-text2', document.getElementById('services-text2').textContent.trim(), 25);
                           });
                         });
                       });
                     });
                   }
                 }
-                nextLi();
+                typeNextLi();
               });
             });
           });
@@ -273,7 +273,12 @@
       });
     }
 
-    window.onload = startChain;
+    // Start typing when page loads
+    window.onload = function() {
+      // Hide all sections initially except hero
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      startChain();
+    };
   </script>
 
 </body>
