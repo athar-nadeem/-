@@ -5,200 +5,247 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>محمد اطہر ندیم - فورٹ عباس</title>
   
-  <!-- Google Fonts: Orbitron (futuristic/robotic) + Caveat (modern handwritten) + fallback -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Caveat:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Caveat', 'Noto Nastaliq Urdu', cursive; /* Handwritten base for body */
-      background: #0a0f1c; /* Dark futuristic background */
-      color: #e0f7ff; /* Light cyan for sci-fi glow */
+      font-family: 'Noto Nastaliq Urdu', 'Roboto', sans-serif;
+      background: #f8f9fa;
+      color: #333;
       line-height: 1.9;
       direction: rtl;
       text-align: right;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       position: relative;
       min-height: 100vh;
     }
-
-    /* Folder-like vertical lines (kept as is) */
-    body::before,
-    body::after {
+    body::before, body::after {
       content: '';
       position: fixed;
-      top: 0;
-      bottom: 0;
+      top: 0; bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, #00f0ff, #3b82f6, #1e40af, #00f0ff);
+      background: linear-gradient(to bottom, #bfdbfe, #3b82f6, #1e40af, #3b82f6, #bfdbfe);
       z-index: 9999;
       pointer-events: none;
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); /* Glow effect */
     }
     body::before { left: 18px; }
-    body::after  { right: 18px; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 25px 50px; /* More padding to keep text away from lines */
-      position: relative;
-      z-index: 1;
-    }
-
+    body::after { right: 18px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 25px 40px; position: relative; z-index: 1; }
     header {
-      background: linear-gradient(to right, #0f172a, #1e3a8a, #3b82f6);
-      color: #00f0ff;
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
+      color: white;
       text-align: center;
-      padding: 120px 20px 80px;
-      border-bottom: 12px solid #00f0ff;
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+      padding: 100px 20px 70px;
+      border-bottom: 10px solid #1e40af;
+      margin-bottom: 40px;
     }
-    header h1 {
-      font-family: 'Orbitron', sans-serif; /* Robotic/futuristic title */
-      font-size: 4.2rem;
-      margin-bottom: 15px;
-      letter-spacing: 4px;
-    }
-    header p {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      opacity: 0.95;
-    }
-
-    section { padding: 90px 0; }
+    header h1 { font-size: 3.8rem; margin-bottom: 12px; }
+    header p { font-size: 1.8rem; opacity: 0.95; }
+    section { padding: 80px 0; display: none; } /* Initially hidden */
+    section.active { display: block; }
     h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      color: #00f0ff;
-      margin-bottom: 35px;
-      border-bottom: 5px solid #3b82f6;
-      padding-bottom: 15px;
+      font-size: 2.8rem;
+      color: #1e40af;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #bfdbfe;
+      padding-bottom: 12px;
       text-align: center;
-      letter-spacing: 3px;
-      text-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
-      min-height: 4rem;
+      min-height: 3.5rem;
     }
-
-    .bio, ul.roles li {
-      font-family: 'Caveat', cursive; /* Handwritten feel for content */
-      font-size: 1.65rem;
-      letter-spacing: 0.8px; /* Slight spacing for futuristic handwritten look */
-      text-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+    .bio {
+      font-size: 1.55rem;
+      max-width: 950px;
+      margin: 0 auto 50px;
+      line-height: 2.1;
+      min-height: 10rem;
     }
-    .bio strong { color: #00f0ff; font-weight: 700; }
-
+    .bio strong { color: #1e40af; font-weight: 700; }
     ul.roles {
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin: 45px 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
     }
     ul.roles li {
-      background: rgba(30, 58, 138, 0.4);
-      padding: 28px;
-      border-radius: 14px;
-      border: 1px solid #3b82f6;
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
       font-weight: bold;
-      font-size: 1.55rem;
-      transition: all 0.4s;
+      font-size: 1.45rem;
+      border-right: 6px solid #3b82f6;
+      min-height: 4rem;
     }
-    ul.roles li:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 30px rgba(0, 240, 255, 0.7);
-      border-color: #00f0ff;
-    }
-
     .typing::after {
       content: '|';
-      color: #00f0ff;
-      animation: blink 1s infinite;
-      margin-right: 4px;
+      color: #1e40af;
+      animation: blink 0.9s infinite;
+      margin-right: 3px;
     }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
+    @keyframes blink { 50% { opacity: 0; } }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
     }
     .gallery img {
       width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-      transition: transform 0.4s, box-shadow 0.4s;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
-    .gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
-    }
-
     footer {
-      background: #0f172a;
-      color: #00f0ff;
+      background: #1e293b;
+      color: white;
       text-align: center;
-      padding: 50px;
-      margin-top: 100px;
-      font-size: 1.5rem;
-      border-top: 8px solid #3b82f6;
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 3.2rem; }
-      h2 { font-size: 2.4rem; }
-      .bio, ul.roles li { font-size: 1.5rem; }
-      .container { padding: 25px 30px; }
-      body::before, body::after { width: 1.5px; left: 12px; right: 12px; }
+      padding: 40px;
+      margin-top: 80px;
+      font-size: 1.4rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Your existing HTML content remains the same, only styles changed for futuristic/handwritten/robotic look -->
-
-  <header data-aos="fade-down" data-aos-duration="1200">
+  <header id="header-section">
     <h1 id="header-title">محمد اطہر ندیم</h1>
     <p id="header-subtitle">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
   </header>
 
   <div class="container">
 
-    <section data-aos="fade-up" data-aos-duration="1000">
+    <section id="intro-section">
       <h2 id="intro-title">تعارف اور ابتدائی زندگی</h2>
       <p class="bio" id="intro-text">
         محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔
       </p>
     </section>
 
-    <!-- ... rest of your sections exactly as before ... -->
+    <section id="roles-section">
+      <h2 id="roles-title">اہم عہدے اور ذمہ داریاں</h2>
+      <ul class="roles" id="roles-list">
+        <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+        <li>رپورٹر ٹی وی چینل 5</li>
+        <li>معاون نمبردار چیک نمبر 211/9R</li>
+        <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+        <li>فنانس سیکرٹری فورٹ عباس</li>
+        <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
+        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
+        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
+      </ul>
+    </section>
 
-    <!-- Include all your previous sections here (roles, media, services, gallery) – no changes needed in HTML -->
+    <section id="media-section">
+      <h2 id="media-title">صحافت اور میڈیا میں کردار</h2>
+      <p class="bio" id="media-text">
+        2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
+      </p>
+    </section>
+
+    <section id="services-section">
+      <h2 id="services-title">دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
+      <p class="bio" id="services-text1">
+        محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
+      </p>
+      <p class="bio" id="services-text2" style="margin-top:40px;">
+        2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
+      </p>
+    </section>
+
+    <section id="gallery-section">
+      <h2>تصاویر</h2>
+      <div class="gallery">
+        <img src="father2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy">
+        <img src="father3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy">
+        <img src="father4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy">
+        <img src="father5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy">
+        <img src="father6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy">
+        <img src="father7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy">
+        <img src="image(20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy">
+      </div>
+    </section>
 
   </div>
 
-  <footer data-aos="fade-up" data-aos-duration="1200">
-    <p id="footer-doa">اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
-    <p id="footer-copy">© 2026 – تیار کردہ: athar-nadeem</p>
+  <footer>
+    <p>اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
+    <p>© 2026 – تیار کردہ: athar-nadeem</p>
   </footer>
 
-  <!-- Scripts remain the same -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true, duration: 1000, easing: 'ease-out', offset: 120 });
-  </script>
+    function typeWriter(element, text, speed = 18, callback = null) {
+      element.classList.add('typing');
+      element.innerHTML = '';
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(interval);
+          element.classList.remove('typing');
+          if (callback) callback();
+        }
+      }, speed);
+    }
 
-  <!-- Your typewriter script here – no changes needed -->
-  <script>
-    // ... paste your existing typewriter script from previous version ...
+    // Chain typing: one section after another
+    function startTypingChain() {
+      // 1. Header first
+      typeWriter(document.getElementById('header-title'), document.getElementById('header-title').textContent.trim(), 15, () => {
+        typeWriter(document.getElementById('header-subtitle'), document.getElementById('header-subtitle').textContent.trim(), 15, () => {
+
+          // 2. Intro section
+          document.getElementById('intro-section').classList.add('active');
+          typeWriter(document.getElementById('intro-title'), document.getElementById('intro-title').textContent.trim(), 15, () => {
+            typeWriter(document.getElementById('intro-text'), document.getElementById('intro-text').textContent.trim(), 18, () => {
+
+              // 3. Roles section
+              document.getElementById('roles-section').classList.add('active');
+              typeWriter(document.getElementById('roles-title'), document.getElementById('roles-title').textContent.trim(), 15, () => {
+                const items = document.querySelectorAll('#roles-list li');
+                let index = 0;
+                function typeNextRole() {
+                  if (index < items.length) {
+                    typeWriter(items[index], items[index].textContent.trim(), 18, () => {
+                      index++;
+                      typeNextRole();
+                    });
+                  } else {
+                    // 4. Media section
+                    document.getElementById('media-section').classList.add('active');
+                    typeWriter(document.getElementById('media-title'), document.getElementById('media-title').textContent.trim(), 15, () => {
+                      typeWriter(document.getElementById('media-text'), document.getElementById('media-text').textContent.trim(), 18, () => {
+
+                        // 5. Services section
+                        document.getElementById('services-section').classList.add('active');
+                        typeWriter(document.getElementById('services-title'), document.getElementById('services-title').textContent.trim(), 15, () => {
+                          typeWriter(document.getElementById('services-text1'), document.getElementById('services-text1').textContent.trim(), 18, () => {
+                            typeWriter(document.getElementById('services-text2'), document.getElementById('services-text2').textContent.trim(), 18, () => {
+
+                              // 6. Gallery section (no typing, just appear)
+                              document.getElementById('gallery-section').classList.add('active');
+                            });
+                          });
+                        });
+                      });
+                    });
+                  }
+                }
+                typeNextRole();
+              });
+            });
+          });
+        });
+      });
+    }
+
+    // Start the chain when page loads
+    window.onload = function() {
+      startTypingChain();
+    };
   </script>
 
 </body>
