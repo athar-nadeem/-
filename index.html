@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>محمد اطہر ندیم - فورٹ عباس | ایک وقف شدہ شخصیت</title>
   
-  <!-- Fonts: Orbitron for titles (futuristic), Caveat for handwritten body, Urdu support -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Caveat:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- AOS for scroll reveal -->
+  <!-- AOS for animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Caveat', 'Noto Nastaliq Urdu', cursive;
-      background: #0a0f1c; /* Dark futuristic background */
-      color: #e0f7ff; /* Light cyan sci-fi glow text */
+      background: #0a0f1c;
+      color: #e0f7ff;
       line-height: 1.95;
       direction: rtl;
       text-align: right;
@@ -24,10 +24,7 @@
       position: relative;
       min-height: 100vh;
     }
-
-    /* Neon futuristic folder lines with glow */
-    body::before,
-    body::after {
+    body::before, body::after {
       content: '';
       position: fixed;
       top: 0; bottom: 0;
@@ -39,15 +36,7 @@
     }
     body::before { left: 20px; }
     body::after { right: 20px; }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 35px 60px;
-      position: relative;
-      z-index: 1;
-    }
-
+    .container { max-width: 1180px; margin: 0 auto; padding: 35px 60px; position: relative; z-index: 1; }
     header {
       background: linear-gradient(to right, #0f172a, #1e3a8a, #3b82f6);
       backdrop-filter: blur(12px);
@@ -71,7 +60,6 @@
       opacity: 0.95;
       letter-spacing: 1.5px;
     }
-
     section { padding: 100px 0; }
     h2 {
       font-family: 'Orbitron', sans-serif;
@@ -83,11 +71,9 @@
       text-align: center;
       letter-spacing: 5px;
       text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
-      min-height: 5rem;
     }
-
     .bio, ul.roles li {
-      font-family: 'Caveat', cursive; /* Beautiful modern handwritten style */
+      font-family: 'Caveat', cursive;
       font-size: 1.75rem;
       letter-spacing: 1px;
       line-height: 2.4;
@@ -98,7 +84,6 @@
       border: 1px solid rgba(0, 240, 255, 0.4);
     }
     .bio strong { color: #00f0ff; font-weight: 900; }
-
     ul.roles {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -122,7 +107,6 @@
       box-shadow: 0 0 60px rgba(0, 240, 255, 0.9);
       border-color: #00f0ff;
     }
-
     .typing::after {
       content: '|';
       color: #00f0ff;
@@ -130,7 +114,6 @@
       margin-right: 6px;
     }
     @keyframes blink { 50% { opacity: 0; } }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -141,15 +124,15 @@
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 0 35px rgba(59, 130, 246, 0.6);
-      transition: all 0.5s;
+      transition: all 0.6s;
       border: 2px solid rgba(0, 240, 255, 0.4);
+      opacity: 0;
+      transform: translateY(40px);
     }
-    .gallery img:hover {
-      transform: scale(1.09);
-      box-shadow: 0 0 70px rgba(0, 240, 255, 1);
-      border-color: #00f0ff;
+    .gallery img.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-
     footer {
       background: rgba(15, 23, 42, 0.9);
       color: #00f0ff;
@@ -160,14 +143,6 @@
       border-top: 10px solid #3b82f6;
       box-shadow: 0 -15px 50px rgba(0, 240, 255, 0.4);
       text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 3.5rem; }
-      h2 { font-size: 2.6rem; }
-      .bio, ul.roles li { font-size: 1.55rem; }
-      .container { padding: 30px 35px; }
-      body::before, body::after { width: 2px; left: 12px; right: 12px; }
     }
   </style>
 </head>
@@ -213,38 +188,49 @@
       <p class="bio" id="services-text1">
         محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
       </p>
-      <p class="bio" id="services-text2" style="margin-top:50px;">
+      <p class="bio" id="services-text2">
         2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
       </p>
     </section>
 
     <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1200">
-      <h2>تصاویر</h2>
+      <h2>تصاویر – محمد اطہر ندیم صاحب</h2>
       <div class="gallery">
-        <img src="father 2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy">
-        <img src="father 3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy">
-        <img src="father 4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy">
-        <img src="father 5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy">
-        <img src="father 6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy">
-        <img src="father 7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy">
-        <img src="image (20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy">
+        <img src="father2.jpeg" alt="تصویر 1" class="gallery-img" data-aos="fade-up" data-aos-delay="0">
+        <img src="father3.jpeg" alt="تصویر 2" class="gallery-img" data-aos="fade-up" data-aos-delay="400">
+        <img src="father4.jpeg" alt="تصویر 3" class="gallery-img" data-aos="fade-up" data-aos-delay="800">
+        <img src="father5.jpeg" alt="تصویر 4" class="gallery-img" data-aos="fade-up" data-aos-delay="1200">
+        <img src="father6.jpeg" alt="تصویر 5" class="gallery-img" data-aos="fade-up" data-aos-delay="1600">
+        <img src="father7.jpeg" alt="تصویر 6" class="gallery-img" data-aos="fade-up" data-aos-delay="2000">
+        <img src="image(20).jpg" alt="تصویر 7" class="gallery-img" data-aos="fade-up" data-aos-delay="2400">
       </div>
     </section>
 
   </div>
 
   <footer data-aos="fade-up" data-aos-duration="1400">
-    <p id="footer-doa">اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
-    <p id="footer-copy">© 2026 – تیار کردہ: athar-nadeem</p>
+    <p>اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
+    <p>© 2026 – تیار کردہ: athar-nadeem</p>
   </footer>
 
-  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true, duration: 1100, easing: 'ease-out', offset: 150 });
+    AOS.init({
+      once: true,
+      duration: 1000,
+      easing: 'ease-out',
+      offset: 120
+    });
+
+    // Optional: Add manual visibility class after AOS (if needed)
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('aos:in', () => {
+        img.classList.add('visible');
+      });
+    });
   </script>
 
-  <!-- Typewriter Script (آہستہ رفتار) -->
+  <!-- Your typewriter script (same as before) -->
   <script>
     function typeWriter(element, text, speed = 22, callback = null) {
       element.classList.add('typing');
@@ -289,7 +275,7 @@
       });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('#header-title, #header-subtitle, #intro-title, #intro-text, #roles-title, #roles-list, #media-title, #media-text, #services-title, #services-text1, #services-text2, '#footer-doa, #footer-copy').forEach(el => {
+    document.querySelectorAll('#header-title, #header-subtitle, #intro-title, #intro-text, #roles-title, #roles-list, #media-title, #media-text, #services-title, #services-text1, #services-text2').forEach(el => {
       observer.observe(el);
     });
   </script>
