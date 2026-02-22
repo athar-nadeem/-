@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>محمد اطہر ندیم - فورٹ عباس</title>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -14,7 +20,7 @@
       line-height: 1.9;
       direction: rtl;
       text-align: right;
-      font-size: 1.3rem;          /* Base size increased ~1.3× */
+      font-size: 1.3rem;
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 25px; }
     header {
@@ -24,11 +30,11 @@
       padding: 100px 20px 70px;
       border-bottom: 10px solid #1e40af;
     }
-    header h1 { font-size: 3.8rem; margin-bottom: 12px; }   /* Larger heading */
+    header h1 { font-size: 3.8rem; margin-bottom: 12px; }
     header p { font-size: 1.8rem; opacity: 0.95; }
-    section { padding: 70px 0; }
+    section { padding: 80px 0; }
     h2 {
-      font-size: 2.8rem;           /* ~1.3× bigger */
+      font-size: 2.8rem;
       color: #1e40af;
       margin-bottom: 30px;
       border-bottom: 4px solid #bfdbfe;
@@ -36,7 +42,7 @@
       text-align: center;
     }
     .bio {
-      font-size: 1.55rem;          /* Main text ~1.3× */
+      font-size: 1.55rem;
       max-width: 950px;
       margin: 0 auto 50px;
       line-height: 2.1;
@@ -56,8 +62,13 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
       font-weight: bold;
-      font-size: 1.45rem;          /* List items larger */
+      font-size: 1.45rem;
       border-right: 6px solid #3b82f6;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    ul.roles li:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
     .gallery {
       display: grid;
@@ -69,7 +80,7 @@
       width: 100%;
       border-radius: 14px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
+      transition: transform 0.4s;
     }
     .gallery img:hover { transform: scale(1.06); }
     footer {
@@ -90,42 +101,42 @@
 </head>
 <body>
 
-  <header>
+  <header data-aos="fade-down" data-aos-duration="1200">
     <h1>محمد اطہر ندیم</h1>
     <p>سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
   </header>
 
   <div class="container">
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000">
       <h2>تعارف اور ابتدائی زندگی</h2>
       <p class="bio">
         محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔
       </p>
     </section>
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <h2>اہم عہدے اور ذمہ داریاں</h2>
       <ul class="roles">
-        <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
-        <li>رپورٹر ٹی وی چینل 5</li>
-        <li>معاون نمبردار چیک نمبر 211/9R</li>
-        <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
-        <li>فنانس سیکرٹری فورٹ عباس</li>
-        <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
-        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
-        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
+        <li data-aos="zoom-in" data-aos-duration="800">جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">رپورٹر ٹی وی چینل 5</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">معاون نمبردار چیک نمبر 211/9R</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">فنانس سیکرٹری فورٹ عباس</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">چیئرمین عشر زکوٰۃ کمیٹی</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
+        <li data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
       </ul>
     </section>
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
       <h2>صحافت اور میڈیا میں کردار</h2>
       <p class="bio">
         2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
       </p>
     </section>
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
       <h2>دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
       <p class="bio">
         محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
@@ -135,25 +146,36 @@
       </p>
     </section>
 
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
       <h2>تصاویر</h2>
       <div class="gallery">
-        <img src="father2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy">
-        <img src="father3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy">
-        <img src="father4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy">
-        <img src="father5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy">
-        <img src="father6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy">
-        <img src="father7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy">
-        <img src="image(20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy">
+        <img src="father2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy" data-aos="fade-up" data-aos-duration="900">
+        <img src="father3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+        <img src="father4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+        <img src="father5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+        <img src="father6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+        <img src="father7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
+        <img src="image(20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy" data-aos="fade-up" data-aos-duration="900" data-aos-delay="600">
       </div>
     </section>
 
   </div>
 
-  <footer>
+  <footer data-aos="fade-up" data-aos-duration="1200">
     <p>اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
     <p>© 2026 – تیار کردہ: athar-nadeem</p>
   </footer>
+
+  <!-- AOS JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,          // Animate only once when scrolled into view
+      duration: 1000,      // Animation speed
+      easing: 'ease-out',  // Smooth easing
+      offset: 120          // Start animation a bit before element is fully in view
+    });
+  </script>
 
 </body>
 </html>
