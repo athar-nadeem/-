@@ -17,47 +17,65 @@
             background: linear-gradient(to right, #006400, #228B22);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
         h1, h2 {
             margin: 0;
         }
         section {
-            padding: 40px 20px;
+            padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .hero {
-            font-size: 1.2em;
+            font-size: 1.4em;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            background: #fff;
-            margin: 10px 0;
-            padding: 15px;
+            background: #f9f9f9;
+            margin: 12px 0;
+            padding: 18px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         }
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            border-radius: 12px;
+            margin: 25px auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 280px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
         }
         footer {
             background: #006400;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            margin-top: 40px;
         }
         @media (max-width: 768px) {
-            section { padding: 20px 10px; }
+            section { padding: 30px 15px; }
+            .gallery img { width: 100%; }
         }
     </style>
 </head>
@@ -66,15 +84,28 @@
         <h1>محمد اطہر ندیم</h1>
         <p class="hero">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
         <p>علاقے کی خدمت اور ترقی کے لیے وقف</p>
-        <!-- Main profile photo - replace 'father.jpg' with your actual main file name if different -->
-        <img src="/father.jpg" alt="محمد اطہر ندیم کی تصویر" width="220">
+        <!-- مرکزی تصویر -->
+        <img src="/father.jpg" alt="محمد اطہر ندیم کی مرکزی تصویر" width="250">
     </header>
 
     <section id="about">
         <h2>تعارف اور ابتدائی زندگی</h2>
         <p>محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔</p>
-        <!-- Photo in about section -->
-        <img src="/father 1.jpg" alt="محمد اطہر ندیم صاحب کی تصویر">
+        <!-- About میں تصویر -->
+        <img src="/father 1.jpg" alt="محمد اطہر ندیم صاحب کی تصویر 1">
+    </section>
+
+    <section id="gallery">
+        <h2>محمد اطہر ندیم صاحب کی تصاویر</h2>
+        <div class="gallery">
+            <img src="/father 2.jpg" alt="تصویر 2">
+            <img src="/father 3.jpg" alt="تصویر 3">
+            <img src="/father 4.jpg" alt="تصویر 4">
+            <img src="/father 5.jpg" alt="تصویر 5">
+            <img src="/father 6.jpg" alt="تصویر 6">
+            <img src="/father 7.jpg" alt="تصویر 7">
+            <img src="/image (20).jpg" alt="تصویر 20">
+        </div>
     </section>
 
     <section id="education">
@@ -99,8 +130,8 @@
     <section id="services">
         <h2>دیہات اور علاقے کے لیے خدمات</h2>
         <p>وہ ایک سمجھدار، فعال اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں شائستگی، سادگی اور لوگوں کی مدد کرنے کا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے قبرستان کے لیے دو کنال زمین عطیہ کی ہے، مسجد کی تعمیر میں حصہ لیا ہے، اور مدرسہ تعلیم القرآن کے لیے بھی زمین عطیہ کی ہے۔ یہ خدمات علاقے کی مذہبی اور سماجی ضروریات کو پورا کرنے میں اہم کردار ادا کر رہی ہیں۔</p>
-        <!-- Photo in services section -->
-        <img src="/father 2.jpg" alt="سماجی خدمات اور کمیونٹی ورک کی تصویر">
+        <!-- Services میں ایک اور تصویر -->
+        <img src="/father 4.jpg" alt="سماجی خدمات کی تصویر">
     </section>
 
     <section id="journalism">
