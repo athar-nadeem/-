@@ -1,161 +1,159 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl" class="scroll-smooth">
+<html lang="ur" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="محمد اطہر ندیم - فورٹ عباس کے ممتاز سیاسی و سماجی رہنما۔ علاقائی خدمت اور ترقی کے لیے وقف۔">
-    <title>محمد اطہر ندیم | فورٹ عباس</title>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        urdu: ['Noto Nastaliq Urdu', 'serif'],
-                    },
-                    colors: {
-                        primary: '#006400',
-                        secondary: '#228B22',
-                        accent: '#4ade80',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>محمد اطہر ندیم - فورٹ عباس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Noto Nastaliq Urdu', 'Roboto', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.9;
+      direction: rtl;
+      text-align: right;
+      font-size: 1.3rem;          /* Base size increased ~1.3× */
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 25px; }
+    header {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
+      color: white;
+      text-align: center;
+      padding: 100px 20px 70px;
+      border-bottom: 10px solid #1e40af;
+    }
+    header h1 { font-size: 3.8rem; margin-bottom: 12px; }   /* Larger heading */
+    header p { font-size: 1.8rem; opacity: 0.95; }
+    section { padding: 70px 0; }
+    h2 {
+      font-size: 2.8rem;           /* ~1.3× bigger */
+      color: #1e40af;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #bfdbfe;
+      padding-bottom: 12px;
+      text-align: center;
+    }
+    .bio {
+      font-size: 1.55rem;          /* Main text ~1.3× */
+      max-width: 950px;
+      margin: 0 auto 50px;
+      line-height: 2.1;
+    }
+    .bio strong { color: #1e40af; font-weight: 700; }
+    ul.roles {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+    ul.roles li {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.45rem;          /* List items larger */
+      border-right: 6px solid #3b82f6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.06); }
+    footer {
+      background: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 80px;
+      font-size: 1.4rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 3rem; }
+      h2 { font-size: 2.3rem; }
+      .bio { font-size: 1.45rem; }
+      ul.roles li { font-size: 1.35rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+<body>
 
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="fixed top-6 left-6 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-xl hover:scale-110 transition">
-        🌙
-    </button>
+  <header>
+    <h1>محمد اطہر ندیم</h1>
+    <p>سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
+  </header>
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-white/70 dark:bg-gray-950/70 backdrop-blur-lg z-40 border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary">محمد اطہر ندیم</a>
-            <ul class="hidden md:flex space-x-10 space-x-reverse font-medium">
-                <li><a href="#about" class="hover:text-secondary transition">تعارف</a></li>
-                <li><a href="#roles" class="hover:text-secondary transition">عہدے</a></li>
-                <li><a href="#services" class="hover:text-secondary transition">خدمات</a></li>
-                <li><a href="#gallery" class="hover:text-secondary transition">تصاویر</a></li>
-                <li><a href="#contact" class="hover:text-secondary transition">رابطہ</a></li>
-            </ul>
-        </div>
-    </nav>
+  <div class="container">
 
-    <!-- Hero -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/90 to-secondary/90 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('father.jpeg')] bg-cover bg-center opacity-40"></div>
-        <div class="relative z-10 text-center px-6 max-w-5xl" data-aos="fade-up" data-aos-duration="1200">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 urdu drop-shadow-2xl">محمد اطہر ندیم</h1>
-            <p class="text-3xl md:text-5xl mb-8 font-light">سیاسی و سماجی رہنما – فورٹ عباس</p>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">علاقے کی بہتری، لوگوں کی خدمت اور کمیونٹی فلاح کے لیے وقفِ زندگی۔</p>
-            <a href="#contact" class="mt-12 inline-block bg-white text-primary px-12 py-5 rounded-full text-xl font-semibold hover:bg-accent hover:text-white transition shadow-2xl">رابطہ کریں</a>
-        </div>
+    <section>
+      <h2>تعارف اور ابتدائی زندگی</h2>
+      <p class="bio">
+        محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔
+      </p>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-6" data-aos="fade-right">
-            <h2 class="text-5xl font-bold text-center mb-16 text-primary urdu">تعارف اور ابتدائی زندگی</h2>
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6 text-lg leading-relaxed urdu">
-                    <p>محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ 1978ء میں چیک نمبر 211/9R (فورٹ عباس) میں پیدا ہوئے۔ سادگی، محنت اور لوگوں کی مدد کا جذبہ ان کی شخصیت کا بنیادی حصہ ہے۔ 2005ء سے علاقائی سماجی، سیاسی اور کمیونٹی خدمات میں مسلسل فعال ہیں۔</p>
-                </div>
-                <img src="father 2.jpeg" alt="محمد اطہر ندیم" class="rounded-3xl shadow-2xl w-full object-cover aspect-[4/5] hover:scale-[1.02] transition duration-500">
-            </div>
-        </div>
+    <section>
+      <h2>اہم عہدے اور ذمہ داریاں</h2>
+      <ul class="roles">
+        <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+        <li>رپورٹر ٹی وی چینل 5</li>
+        <li>معاون نمبردار چیک نمبر 211/9R</li>
+        <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+        <li>فنانس سیکرٹری فورٹ عباس</li>
+        <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
+        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
+        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
+      </ul>
     </section>
 
-    <!-- Roles -->
-    <section id="roles" class="py-24 bg-gray-50 dark:bg-gray-950">
-        <div class="max-w-7xl mx-auto px-6" data-aos="fade-left">
-            <h2 class="text-5xl font-bold text-center mb-16 text-primary urdu">اہم عہدے اور ذمہ داریاں</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300">
-                    <ul class="space-y-5 text-lg urdu">
-                        <li class="flex items-center"><span class="text-secondary text-2xl mr-3">☆</span> جنرل سیکرٹری جناح کلب فورٹ عباس</li>
-                        <li class="flex items-center"><span class="text-secondary text-2xl mr-3">☆</span> رپورٹر ٹی وی چینل 5</li>
-                        <li class="flex items-center"><span class="text-secondary text-2xl mr-3">☆</span> معاون نمبردار چیک نمبر 211/9R</li>
-                    </ul>
-                </div>
-                <!-- دوسرے اور تیسرے کارڈ اسی طرح، آپ کاپی پیسٹ کر کے مکمل کر لیں جیسا پچھلے کوڈ میں تھا -->
-                <!-- ... باقی کارڈز شامل کریں ... -->
-            </div>
-        </div>
+    <section>
+      <h2>صحافت اور میڈیا میں کردار</h2>
+      <p class="bio">
+        2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
+      </p>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-6" data-aos="zoom-in">
-            <h2 class="text-5xl font-bold text-center mb-16 text-primary urdu">خدمات اور قربانیاں</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300">
-                    <h3 class="text-3xl font-bold mb-6 urdu">زمین عطیہ</h3>
-                    <p class="text-lg urdu mb-6">قبرستان کے لیے دو کنال ذاتی زمین وقف کی۔</p>
-                    <img src="father 3.jpeg" alt="" class="rounded-2xl w-full h-64 object-cover">
-                </div>
-                <!-- باقی دو کارڈز اسی طرح (father 4 اور 5) -->
-            </div>
-        </div>
+    <section>
+      <h2>دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
+      <p class="bio">
+        محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
+      </p>
+      <p class="bio" style="margin-top:40px;">
+        2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
+      </p>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="py-24 bg-gray-50 dark:bg-gray-950">
-        <div class="max-w-7xl mx-auto px-6" data-aos="fade-up">
-            <h2 class="text-5xl font-bold text-center mb-16 text-primary urdu">تصاویر</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <img src="father 6.jpeg" alt="" class="rounded-3xl shadow-xl hover:scale-105 transition duration-500 object-cover h-96 w-full">
-                <img src="father 7.jpeg" alt="" class="rounded-3xl shadow-xl hover:scale-105 transition duration-500 object-cover h-96 w-full">
-                <img src="image(20).jpg" alt="" class="rounded-3xl shadow-xl hover:scale-105 transition duration-500 object-cover h-96 w-full">
-                <!-- باقی تصاویر شامل کریں -->
-            </div>
-        </div>
+    <section>
+      <h2>تصاویر</h2>
+      <div class="gallery">
+        <img src="father2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy">
+        <img src="father3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy">
+        <img src="father4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy">
+        <img src="father5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy">
+        <img src="father6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy">
+        <img src="father7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy">
+        <img src="image(20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy">
+      </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-primary to-secondary text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-up">
-            <h2 class="text-5xl font-bold mb-10 urdu">رابطہ کریں</h2>
-            <div class="flex flex-wrap justify-center gap-8">
-                <a href="tel:03008694666" class="bg-white text-primary px-12 py-6 rounded-full text-xl font-bold hover:bg-gray-100 transition shadow-2xl">0300-8694666</a>
-                <a href="https://wa.me/923008694666" target="_blank" class="bg-white text-primary px-12 py-6 rounded-full text-xl font-bold hover:bg-gray-100 transition shadow-2xl">واٹس ایپ پر رابطہ</a>
-            </div>
-        </div>
-    </section>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 text-center">
-        <p>&copy; 2026 محمد اطہر ندیم - تمام حقوق محفوظ</p>
-        <p class="mt-2">ڈیزائن: آپ کا بیٹا Athar</p>
-    </footer>
+  <footer>
+    <p>اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
+    <p>© 2026 – تیار کردہ: athar-nadeem</p>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        toggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
-        });
-    </script>
 </body>
 </html>
