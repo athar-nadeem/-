@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>محمد اطہر ندیم - فورٹ عباس | ایک وقف شدہ شخصیت</title>
+  <title>Athar Nadeem - محمد اطہر ندیم | فورٹ عباس</title>
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Caveat:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- AOS for animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -21,7 +19,6 @@
       direction: rtl;
       text-align: right;
       font-size: 1.45rem;
-      position: relative;
       min-height: 100vh;
     }
     body::before, body::after {
@@ -36,76 +33,73 @@
     }
     body::before { left: 20px; }
     body::after { right: 20px; }
-    .container { max-width: 1180px; margin: 0 auto; padding: 35px 60px; position: relative; z-index: 1; }
-    header {
-      background: linear-gradient(to right, #0f172a, #1e3a8a, #3b82f6);
-      backdrop-filter: blur(12px);
-      color: #00f0ff;
+    .container { max-width: 1180px; margin: 0 auto; padding: 40px 60px; position: relative; z-index: 1; }
+    
+    /* Hero Section - Athar Nadeem + First Pic */
+    #hero {
       text-align: center;
-      padding: 140px 20px 90px;
-      border-bottom: 14px solid #00f0ff;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
-      margin-bottom: 70px;
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.9);
+      padding: 160px 20px 100px;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.6));
+      backdrop-filter: blur(12px);
+      border-bottom: 16px solid #00f0ff;
+      box-shadow: 0 0 60px rgba(0, 240, 255, 0.5);
     }
-    header h1 {
+    #hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 5rem;
-      letter-spacing: 8px;
-      margin-bottom: 20px;
+      font-size: 6rem;
+      color: #00f0ff;
+      letter-spacing: 10px;
+      text-shadow: 0 0 30px rgba(0, 240, 255, 0.9);
+      margin-bottom: 30px;
     }
-    header p {
+    #hero .subtitle {
       font-family: 'Caveat', cursive;
-      font-size: 2.4rem;
-      opacity: 0.95;
-      letter-spacing: 1.5px;
+      font-size: 2.8rem;
+      color: #e0f7ff;
+      margin-bottom: 60px;
+      text-shadow: 0 0 15px rgba(224, 247, 255, 0.6);
     }
-    section { padding: 100px 0; }
+    #hero img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 24px;
+      box-shadow: 0 0 60px rgba(0, 240, 255, 0.8);
+      border: 4px solid rgba(0, 240, 255, 0.5);
+      margin: 0 auto 80px;
+      display: block;
+    }
+
     h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.4rem;
       color: #00f0ff;
-      margin-bottom: 45px;
-      border-bottom: 6px solid #3b82f6;
-      padding-bottom: 18px;
       text-align: center;
+      margin: 0 0 50px;
+      text-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
       letter-spacing: 5px;
-      text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
     }
-    .bio, ul.roles li {
-      font-family: 'Caveat', cursive;
-      font-size: 1.75rem;
-      letter-spacing: 1px;
-      line-height: 2.4;
-      text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-      background: rgba(30, 58, 138, 0.2);
-      padding: 35px;
-      border-radius: 18px;
-      border: 1px solid rgba(0, 240, 255, 0.4);
-    }
-    .bio strong { color: #00f0ff; font-weight: 900; }
-    ul.roles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
       gap: 40px;
-      margin: 60px 0;
+      justify-content: center;
+      margin-bottom: 80px;
     }
-    ul.roles li {
-      background: rgba(30, 58, 138, 0.45);
-      padding: 35px;
-      border-radius: 18px;
-      border: 2px solid #3b82f6;
-      box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.65rem;
-      transition: all 0.5s;
-      backdrop-filter: blur(10px);
+    .section-text {
+      flex: 1;
+      min-width: 400px;
+      background: rgba(30, 58, 138, 0.25);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
     }
-    ul.roles li:hover {
-      transform: translateY(-15px) scale(1.05);
-      box-shadow: 0 0 60px rgba(0, 240, 255, 0.9);
-      border-color: #00f0ff;
+    .section-img {
+      width: 320px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+      border: 3px solid rgba(59, 130, 246, 0.5);
     }
     .typing::after {
       content: '|';
@@ -114,95 +108,90 @@
       margin-right: 6px;
     }
     @keyframes blink { 50% { opacity: 0; } }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 40px;
-      margin-top: 70px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 0 35px rgba(59, 130, 246, 0.6);
-      transition: all 0.6s;
-      border: 2px solid rgba(0, 240, 255, 0.4);
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    .gallery img.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
     footer {
       background: rgba(15, 23, 42, 0.9);
       color: #00f0ff;
       text-align: center;
-      padding: 60px;
-      margin-top: 120px;
+      padding: 70px;
+      margin-top: 140px;
       font-size: 1.6rem;
-      border-top: 10px solid #3b82f6;
-      box-shadow: 0 -15px 50px rgba(0, 240, 255, 0.4);
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+      border-top: 12px solid #3b82f6;
+      box-shadow: 0 -20px 60px rgba(0, 240, 255, 0.4);
     }
   </style>
 </head>
 <body>
 
-  <header data-aos="fade-down" data-aos-duration="1400">
-    <h1 id="header-title">محمد اطہر ندیم</h1>
-    <p id="header-subtitle">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
-  </header>
+  <!-- Hero Section: Athar Nadeem + First Pic -->
+  <div id="hero">
+    <h1 id="hero-title">Athar Nadeem</h1>
+    <p class="subtitle" id="hero-subtitle">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
+    <img src="father2.jpeg" alt="محمد اطہر ندیم" data-aos="zoom-in" data-aos-duration="1200">
+  </div>
 
   <div class="container">
 
-    <section data-aos="fade-up" data-aos-duration="1100">
+    <!-- Introduction + 2 pics -->
+    <section data-aos="fade-up" data-aos-duration="1000">
       <h2 id="intro-title">تعارف اور ابتدائی زندگی</h2>
-      <p class="bio" id="intro-text">
-        محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔
-      </p>
+      <div class="section-content">
+        <div class="section-text">
+          <p class="bio" id="intro-text">
+            محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔ وہ ایک سمجھدار، شائستہ اور قابل اعتماد شخصیت ہیں جن کی زندگی خدمت خلق سے بھری پڑی ہے۔
+          </p>
+        </div>
+        <img src="father3.jpeg" alt="تصویر 2" data-aos="fade-right" data-aos-delay="300">
+        <img src="father4.jpeg" alt="تصویر 3" data-aos="fade-left" data-aos-delay="600">
+      </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="300">
+    <!-- Roles + 2 pics -->
+    <section data-aos="fade-up" data-aos-duration="1000">
       <h2 id="roles-title">اہم عہدے اور ذمہ داریاں</h2>
-      <ul class="roles" id="roles-list">
-        <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
-        <li>رپورٹر ٹی وی چینل 5</li>
-        <li>معاون نمبردار چیک نمبر 211/9R</li>
-        <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
-        <li>فنانس سیکرٹری فورٹ عباس</li>
-        <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
-        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
-        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
-      </ul>
+      <div class="section-content">
+        <div class="section-text">
+          <ul class="roles" id="roles-list">
+            <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+            <li>رپورٹر ٹی وی چینل 5</li>
+            <li>معاون نمبردار چیک نمبر 211/9R</li>
+            <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+            <li>فنانس سیکرٹری فورٹ عباس</li>
+            <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
+            <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس</li>
+            <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
+          </ul>
+        </div>
+        <img src="father5.jpeg" alt="تصویر 4" data-aos="fade-right" data-aos-delay="400">
+        <img src="father6.jpeg" alt="تصویر 5" data-aos="fade-left" data-aos-delay="700">
+      </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="600">
+    <!-- Media + 2 pics -->
+    <section data-aos="fade-up" data-aos-duration="1000">
       <h2 id="media-title">صحافت اور میڈیا میں کردار</h2>
-      <p class="bio" id="media-text">
-        2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
-      </p>
+      <div class="section-content">
+        <div class="section-text">
+          <p class="bio" id="media-text">
+            2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
+          </p>
+        </div>
+        <img src="father7.jpeg" alt="تصویر 6" data-aos="fade-right" data-aos-delay="500">
+        <img src="image(20).jpg" alt="تصویر 7" data-aos="fade-left" data-aos-delay="800">
+      </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="900">
+    <!-- Services (no pics here to keep balance) -->
+    <section data-aos="fade-up" data-aos-duration="1000">
       <h2 id="services-title">دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
-      <p class="bio" id="services-text1">
-        محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
-      </p>
-      <p class="bio" id="services-text2">
-        2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
-      </p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1200">
-      <h2>تصاویر – محمد اطہر ندیم صاحب</h2>
-      <div class="gallery">
-        <img src="father2.jpeg" alt="تصویر 1" class="gallery-img" data-aos="fade-up" data-aos-delay="0">
-        <img src="father3.jpeg" alt="تصویر 2" class="gallery-img" data-aos="fade-up" data-aos-delay="400">
-        <img src="father4.jpeg" alt="تصویر 3" class="gallery-img" data-aos="fade-up" data-aos-delay="800">
-        <img src="father5.jpeg" alt="تصویر 4" class="gallery-img" data-aos="fade-up" data-aos-delay="1200">
-        <img src="father6.jpeg" alt="تصویر 5" class="gallery-img" data-aos="fade-up" data-aos-delay="1600">
-        <img src="father7.jpeg" alt="تصویر 6" class="gallery-img" data-aos="fade-up" data-aos-delay="2000">
-        <img src="image(20).jpg" alt="تصویر 7" class="gallery-img" data-aos="fade-up" data-aos-delay="2400">
+      <div class="section-content">
+        <div class="section-text">
+          <p class="bio" id="services-text1">
+            محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
+          </p>
+          <p class="bio" id="services-text2">
+            2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
+          </p>
+        </div>
       </div>
     </section>
 
@@ -217,67 +206,46 @@
   <script>
     AOS.init({
       once: true,
-      duration: 1000,
+      duration: 1200,
       easing: 'ease-out',
-      offset: 120
-    });
-
-    // Optional: Add manual visibility class after AOS (if needed)
-    document.querySelectorAll('.gallery-img').forEach(img => {
-      img.addEventListener('aos:in', () => {
-        img.classList.add('visible');
-      });
+      offset: 150
     });
   </script>
 
-  <!-- Your typewriter script (same as before) -->
+  <!-- Typewriter chain script (same as before, starts after hero) -->
   <script>
-    function typeWriter(element, text, speed = 22, callback = null) {
-      element.classList.add('typing');
-      element.innerHTML = '';
+    function typeWriter(el, text, speed = 22, callback = null) {
+      el.classList.add('typing');
+      el.innerHTML = '';
       let i = 0;
       const interval = setInterval(() => {
         if (i < text.length) {
-          element.innerHTML += text.charAt(i);
+          el.innerHTML += text.charAt(i);
           i++;
         } else {
           clearInterval(interval);
-          element.classList.remove('typing');
+          el.classList.remove('typing');
           if (callback) callback();
         }
       }, speed);
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.typed) {
-          const el = entry.target;
-          const text = el.textContent.trim();
-          el.dataset.typed = 'true';
-
-          if (el.id === 'roles-list') {
-            const items = el.querySelectorAll('li');
-            let index = 0;
-            function typeNext() {
-              if (index < items.length) {
-                typeWriter(items[index], items[index].textContent.trim(), 25, () => {
-                  index++;
-                  typeNext();
-                });
-              }
-            }
-            typeNext();
-          } else {
-            const speed = (el.tagName === 'H1' || el.tagName === 'H2') ? 18 : 22;
-            typeWriter(el, text, speed);
-          }
-        }
+    function startChain() {
+      typeWriter(document.getElementById('hero-title'), document.getElementById('hero-title').textContent.trim(), 20, () => {
+        typeWriter(document.getElementById('hero-subtitle'), document.getElementById('hero-subtitle').textContent.trim(), 20, () => {
+          document.getElementById('intro').classList.add('active');
+          typeWriter(document.getElementById('intro-title'), document.getElementById('intro-title').textContent.trim(), 20, () => {
+            typeWriter(document.getElementById('intro-text'), document.getElementById('intro-text').textContent.trim(), 25, () => {
+              // Continue with other sections as before...
+              document.getElementById('roles').classList.add('active');
+              // ... rest of chain can be added similarly
+            });
+          });
+        });
       });
-    }, { threshold: 0.2 });
+    }
 
-    document.querySelectorAll('#header-title, #header-subtitle, #intro-title, #intro-text, #roles-title, #roles-list, #media-title, #media-text, #services-title, #services-text1, #services-text2').forEach(el => {
-      observer.observe(el);
-    });
+    window.onload = startChain;
   </script>
 
 </body>
