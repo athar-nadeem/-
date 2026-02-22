@@ -21,17 +21,49 @@
       direction: rtl;
       text-align: right;
       font-size: 1.3rem;
+      position: relative;
+      min-height: 100vh;
     }
-    .container { max-width: 1100px; margin: 0 auto; padding: 25px; }
+
+    /* Folder-like vertical lines on both sides */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #bfdbfe, #3b82f6, #1e40af, #3b82f6, #bfdbfe);
+      z-index: 9999;
+      pointer-events: none;
+    }
+    body::before { left: 18px; }
+    body::after  { right: 18px; }
+
+    @media (max-width: 768px) {
+      body::before,
+      body::after { width: 1px; }
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 25px 40px; /* extra padding so text doesn't touch lines */
+      position: relative;
+      z-index: 1;
+    }
+
     header {
       background: linear-gradient(to right, #1e3a8a, #3b82f6);
       color: white;
       text-align: center;
       padding: 100px 20px 70px;
       border-bottom: 10px solid #1e40af;
+      margin-bottom: 40px;
     }
     header h1 { font-size: 3.8rem; margin-bottom: 12px; }
     header p { font-size: 1.8rem; opacity: 0.95; }
+
     section { padding: 80px 0; }
     h2 {
       font-size: 2.8rem;
@@ -50,6 +82,7 @@
       min-height: 10rem;
     }
     .bio strong { color: #1e40af; font-weight: 700; }
+
     ul.roles {
       list-style: none;
       display: grid;
@@ -73,6 +106,7 @@
       transform: translateY(-8px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
+
     .typing::after {
       content: '|';
       color: #1e40af;
@@ -82,6 +116,7 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -95,6 +130,7 @@
       transition: transform 0.4s;
     }
     .gallery img:hover { transform: scale(1.06); }
+
     footer {
       background: #1e293b;
       color: white;
@@ -103,11 +139,14 @@
       margin-top: 80px;
       font-size: 1.4rem;
     }
+
     @media (max-width: 768px) {
       header h1 { font-size: 3rem; }
       h2 { font-size: 2.3rem; }
       .bio { font-size: 1.45rem; }
       ul.roles li { font-size: 1.35rem; }
+      .container { padding: 25px 25px; }
+      body::before, body::after { left: 10px; right: 10px; }
     }
   </style>
 </head>
@@ -210,7 +249,6 @@
           el.dataset.typed = 'true';
 
           if (el.id === 'roles-list') {
-            // Type role items one by one (slower chain)
             const items = el.querySelectorAll('li');
             let index = 0;
             function typeNext() {
@@ -223,7 +261,6 @@
             }
             typeNext();
           } else {
-            // Normal text elements - slower typing
             const speed = (el.tagName === 'H1' || el.tagName === 'H2') ? 15 : 18;
             typeWriter(el, text, speed);
           }
@@ -231,7 +268,6 @@
       });
     }, { threshold: 0.15 });
 
-    // Observe all typing elements
     document.querySelectorAll('#header-title, #header-subtitle, #intro-title, #intro-text, #roles-title, #roles-list, #media-title, #media-text, #services-title, #services-text1, #services-text2, #footer-doa, #footer-copy').forEach(el => {
       observer.observe(el);
     });
