@@ -16,7 +16,7 @@
       color: #e0f7ff;
       line-height: 1.95;
       direction: rtl;
-      text-align: center !important; /* All text centered */
+      text-align: center;
       font-size: 1.45rem;
       min-height: 100vh;
     }
@@ -94,7 +94,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
-      margin-top: 60px;
+      margin: 60px auto;
     }
     .section-images img {
       width: 320px;
@@ -189,7 +189,6 @@
       <p class="bio" id="services-text2">
         2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
       </p>
-      <!-- No extra images here to keep balance – already 7 images used -->
     </section>
 
   </div>
@@ -209,9 +208,9 @@
     });
   </script>
 
-  <!-- Typewriter script (starts from hero) -->
+  <!-- Typewriter Effect - Someone is typing it live -->
   <script>
-    function typeWriter(el, text, speed = 22, callback = null) {
+    function typeWriter(el, text, speed = 25, callback = null) {
       el.classList.add('typing');
       el.innerHTML = '';
       let i = 0;
@@ -228,11 +227,16 @@
     }
 
     function startChain() {
+      // Hero Title & Subtitle
       typeWriter(document.getElementById('hero-title'), document.getElementById('hero-title').textContent.trim(), 20, () => {
         typeWriter(document.getElementById('hero-subtitle'), document.getElementById('hero-subtitle').textContent.trim(), 20, () => {
+
+          // Intro Section
           document.getElementById('intro').classList.add('active');
           typeWriter(document.getElementById('intro-title'), document.getElementById('intro-title').textContent.trim(), 20, () => {
             typeWriter(document.getElementById('intro-text'), document.getElementById('intro-text').textContent.trim(), 25, () => {
+
+              // Roles Section
               document.getElementById('roles').classList.add('active');
               typeWriter(document.getElementById('roles-title'), document.getElementById('roles-title').textContent.trim(), 20, () => {
                 const lis = document.querySelectorAll('#roles-list li');
@@ -244,9 +248,13 @@
                       nextLi();
                     });
                   } else {
+
+                    // Media Section
                     document.getElementById('media').classList.add('active');
                     typeWriter(document.getElementById('media-title'), document.getElementById('media-title').textContent.trim(), 20, () => {
                       typeWriter(document.getElementById('media-text'), document.getElementById('media-text').textContent.trim(), 25, () => {
+
+                        // Services Section
                         document.getElementById('services').classList.add('active');
                         typeWriter(document.getElementById('services-title'), document.getElementById('services-title').textContent.trim(), 20, () => {
                           typeWriter(document.getElementById('services-text1'), document.getElementById('services-text1').textContent.trim(), 25, () => {
