@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>محمد اطہر ندیم - فورٹ عباس | ایک وقف شدہ شخصیت</title>
   
-  <!-- Futuristic + Modern Fonts -->
+  <!-- Fonts: Orbitron for titles (futuristic), Caveat for handwritten body, Urdu support -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Caveat:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
   
+  <!-- AOS for scroll reveal -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Caveat', 'Noto Nastaliq Urdu', cursive;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #e0f7ff;
-      line-height: 2.0;
+      background: #0a0f1c; /* Dark futuristic background */
+      color: #e0f7ff; /* Light cyan sci-fi glow text */
+      line-height: 1.95;
       direction: rtl;
       text-align: right;
       font-size: 1.45rem;
+      position: relative;
       min-height: 100vh;
-      overflow-x: hidden;
     }
-    /* Neon Folder Lines */
+
+    /* Neon futuristic folder lines with glow */
     body::before,
     body::after {
       content: '';
@@ -31,260 +35,263 @@
       background: linear-gradient(to bottom, transparent, #00f0ff, #3b82f6, #00f0ff, transparent);
       z-index: 9999;
       pointer-events: none;
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
     }
     body::before { left: 20px; }
     body::after { right: 20px; }
-    
+
     .container {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 40px 60px;
+      padding: 35px 60px;
       position: relative;
       z-index: 1;
     }
+
     header {
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(59, 130, 246, 0.5));
-      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, #0f172a, #1e3a8a, #3b82f6);
+      backdrop-filter: blur(12px);
       color: #00f0ff;
       text-align: center;
-      padding: 160px 20px 100px;
-      border-bottom: 16px solid #00f0ff;
-      box-shadow: 0 0 40px rgba(0, 240, 255, 0.4);
-      margin-bottom: 80px;
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+      padding: 140px 20px 90px;
+      border-bottom: 14px solid #00f0ff;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+      margin-bottom: 70px;
+      text-shadow: 0 0 15px rgba(0, 240, 255, 0.9);
     }
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 5rem;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       margin-bottom: 20px;
     }
     header p {
-      font-size: 2.2rem;
+      font-family: 'Caveat', cursive;
+      font-size: 2.4rem;
       opacity: 0.95;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
-    section {
-      padding: 120px 0;
-      display: none;
-      opacity: 0;
-      transition: opacity 1.8s;
-    }
-    section.active { display: block; opacity: 1; }
+
+    section { padding: 100px 0; }
     h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
+      font-size: 3.4rem;
       color: #00f0ff;
-      margin-bottom: 50px;
-      border-bottom: 8px solid #3b82f6;
-      padding-bottom: 20px;
+      margin-bottom: 45px;
+      border-bottom: 6px solid #3b82f6;
+      padding-bottom: 18px;
       text-align: center;
-      letter-spacing: 4px;
-      text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
-      min-height: 6rem;
+      letter-spacing: 5px;
+      text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+      min-height: 5rem;
     }
-    .bio {
+
+    .bio, ul.roles li {
+      font-family: 'Caveat', cursive; /* Beautiful modern handwritten style */
       font-size: 1.75rem;
-      max-width: 1100px;
-      margin: 0 auto 80px;
+      letter-spacing: 1px;
       line-height: 2.4;
-      letter-spacing: 0.8px;
-      text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
-      background: rgba(30, 58, 138, 0.15);
-      padding: 30px;
-      border-radius: 16px;
-      border: 1px solid rgba(0, 240, 255, 0.3);
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+      background: rgba(30, 58, 138, 0.2);
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 240, 255, 0.4);
     }
     .bio strong { color: #00f0ff; font-weight: 900; }
+
     ul.roles {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 40px;
       margin: 60px 0;
     }
     ul.roles li {
-      background: rgba(30, 58, 138, 0.3);
+      background: rgba(30, 58, 138, 0.45);
       padding: 35px;
       border-radius: 18px;
       border: 2px solid #3b82f6;
-      box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
       text-align: center;
       font-weight: bold;
-      font-size: 1.7rem;
-      transition: all 0.4s;
-      backdrop-filter: blur(8px);
+      font-size: 1.65rem;
+      transition: all 0.5s;
+      backdrop-filter: blur(10px);
     }
     ul.roles li:hover {
-      transform: translateY(-15px) scale(1.04);
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.8);
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 0 60px rgba(0, 240, 255, 0.9);
       border-color: #00f0ff;
     }
+
     .typing::after {
       content: '|';
       color: #00f0ff;
       animation: blink 0.8s infinite;
-      margin-right: 5px;
+      margin-right: 6px;
     }
     @keyframes blink { 50% { opacity: 0; } }
+
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 40px;
-      margin-top: 80px;
+      margin-top: 70px;
     }
     .gallery img {
       width: 100%;
       border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.6);
       transition: all 0.5s;
-      border: 2px solid rgba(59, 130, 246, 0.5);
+      border: 2px solid rgba(0, 240, 255, 0.4);
     }
     .gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 25px 70px rgba(0, 240, 255, 0.9);
+      transform: scale(1.09);
+      box-shadow: 0 0 70px rgba(0, 240, 255, 1);
       border-color: #00f0ff;
     }
+
     footer {
       background: rgba(15, 23, 42, 0.9);
       color: #00f0ff;
       text-align: center;
-      padding: 70px;
-      margin-top: 140px;
+      padding: 60px;
+      margin-top: 120px;
       font-size: 1.6rem;
       border-top: 10px solid #3b82f6;
-      box-shadow: 0 -10px 40px rgba(0, 240, 255, 0.3);
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+      box-shadow: 0 -15px 50px rgba(0, 240, 255, 0.4);
+      text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 3.5rem; }
+      h2 { font-size: 2.6rem; }
+      .bio, ul.roles li { font-size: 1.55rem; }
+      .container { padding: 30px 35px; }
+      body::before, body::after { width: 2px; left: 12px; right: 12px; }
     }
   </style>
 </head>
 <body>
 
-  <header id="header">
+  <header data-aos="fade-down" data-aos-duration="1400">
     <h1 id="header-title">محمد اطہر ندیم</h1>
-    <p id="header-subtitle">سیاسی، سماجی رہنما، فعال کارکن، صحافی اور کمیونٹی کی خدمت میں وقف شخصیت – فورٹ عباس، ضلع بہاولنگر، پنجاب</p>
+    <p id="header-subtitle">سیاسی، سماجی رہنما اور فعال کارکن – فورٹ عباس</p>
   </header>
 
   <div class="container">
 
-    <section id="intro">
+    <section data-aos="fade-up" data-aos-duration="1100">
       <h2 id="intro-title">تعارف اور ابتدائی زندگی</h2>
       <p class="bio" id="intro-text">
-        محمد اطہر ندیم صاحب ولد محمد فضل دین ایک ایسی نمایاں شخصیت ہیں جنہوں نے اپنی پوری زندگی فورٹ عباس اور آس پاس کے دیہات کی خدمت، ترقی اور فلاح و بہبود کے لیے وقف کر دی ہے۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں ایک سادہ اور محنتی گھرانے میں پیدا ہوئے۔ بچپن سے ہی ان میں محنت کشی، ایمانداری، لوگوں کی مدد کرنے کا جذبہ اور سماجی ذمہ داری کا احساس پایا جاتا تھا۔ ابتدائی تعلیم اپنے گاؤں میں حاصل کرنے کے بعد انہوں نے مزید تعلیم کے لیے محنت کی اور علم حاصل کیا۔ تعلیم مکمل کرنے کے بعد 2005ء سے انہوں نے منظم اور مستقل بنیادوں پر سماجی، سیاسی، مذہبی اور کمیونٹی کی خدمات کا آغاز کیا۔ آج 20 سال سے زائد عرصہ بیت چکا ہے اور ان کی کاوشیں علاقے میں ایک روشن مثال بن چکی ہیں۔ وہ ایک ایسے رہنما ہیں جو نہ صرف لوگوں کے مسائل سنتے اور سمجھتے ہیں بلکہ انہیں عملی طور پر حل کرنے کے لیے دن رات محنت کرتے ہیں۔ ان کی شخصیت میں سادگی، شائستگی، قابل اعتماد ہونے کا عنصر اور لوگوں سے گہری محبت بہت نمایاں ہے۔ علاقے کے لوگ انہیں ایک بھروسہ مند اور مخلص شخصیت کے طور پر جانتے اور ان پر مکمل اعتماد کرتے ہیں۔ ان کا کردار فورٹ عباس اور چیک 211/9R کی مجموعی ترقی، سماجی ہم آہنگی اور مذہبی شعور میں ایک سنگ میل کی حیثیت رکھتا ہے۔
+        محمد اطہر ندیم صاحب ولد محمد فضل دین ہیں۔ وہ 1978ء میں چیک نمبر 211/9R (فورٹ عباس، ضلع بہاولنگر، پنجاب) میں پیدا ہوئے۔ تعلیم مکمل کرنے کے بعد انہوں نے 2005ء سے فورٹ عباس کی سماجی، سیاسی اور کمیونٹی خدمات میں فعال کردار ادا کرنا شروع کیا، جو آج تک جاری ہے۔
       </p>
     </section>
 
-    <!-- باقی تمام سیکشنز وہی رکھے ہیں جو آپ کے پچھلے کوڈ میں تھے – تفصیلات مکمل اور لمبی -->
-
-    <section id="roles">
+    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="300">
       <h2 id="roles-title">اہم عہدے اور ذمہ داریاں</h2>
       <ul class="roles" id="roles-list">
-        <li>جنرل سیکرٹری جناح کلب فورٹ عباس – سیاسی سرگرمیوں کی تنظیم، رہنمائی اور عوامی مسائل کی آواز اٹھانا</li>
-        <li>رپورٹر ٹی وی چینل 5 – علاقائی مسائل، خبریں اور ترقیاتی رپورٹنگ</li>
-        <li>معاون نمبردار چیک نمبر 211/9R – زمینی تنازعات اور ریونیو امور میں مدد</li>
-        <li>ممبر مارکیٹ کمیٹی فورٹ عباس – غلہ منڈی کے انتظامات اور کسانوں کے حقوق</li>
-        <li>فنانس سیکرٹری فورٹ عباس – مالیاتی امور کی نگرانی اور شفافیت</li>
-        <li>چیئرمین عشر زکوٰۃ کمیٹی – مستحقین تک زکوٰۃ اور عشر کی تقسیم</li>
-        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس – کسانوں کی فصلوں کی منصفانہ خرید و فروخت</li>
-        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R – دینی تعلیم اور طلبہ کی فلاح</li>
+        <li>جنرل سیکرٹری جناح کلب فورٹ عباس</li>
+        <li>رپورٹر ٹی وی چینل 5</li>
+        <li>معاون نمبردار چیک نمبر 211/9R</li>
+        <li>ممبر مارکیٹ کمیٹی فورٹ عباس</li>
+        <li>فنانس سیکرٹری فورٹ عباس</li>
+        <li>چیئرمین عشر زکوٰۃ کمیٹی</li>
+        <li>زمزم کمیشن ایجنٹ غلہ منڈی فورٹ عباس (Zam Zam Commission Agent Galla Mandi Fort Abbas – Grain Market)</li>
+        <li>مہتمم مدرسہ تعلیم القرآن چیک نمبر 211/9R</li>
       </ul>
     </section>
 
-    <section id="media">
+    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="600">
       <h2 id="media-title">صحافت اور میڈیا میں کردار</h2>
       <p class="bio" id="media-text">
-        محمد اطہر ندیم صاحب صحافت کے میدان میں بھی ایک معتبر نام ہیں۔ 2007ء میں انہوں نے روزنامہ جنگ کے نمائندہ کے طور پر اپنا سفر شروع کیا۔ وہ علاقائی سطح پر ہونے والے تمام اہم واقعات، ترقیاتی کاموں، سیاسی تحریکوں اور سماجی مسائل کو قومی میڈیا تک پہنچاتے رہے۔ فی الحال وہ ٹی وی چینل 5 کے ساتھ بطور رپورٹر وابستہ ہیں۔ ان کی رپورٹنگ میں شفافیت، غیر جانبداری اور عوامی مسائل پر گہری نظر رہتی ہے۔ وہ فیلڈ میں جاتے ہیں، لوگوں سے براہ راست بات کرتے ہیں، تصاویر اور ویڈیوز بناتے ہیں اور پھر انہیں نشر کرتے ہیں۔ ان کی صحافت کی بدولت فورٹ عباس کے کئی مسائل (جیسے پانی کی کمی، سڑکوں کی حالت، بجلی، ہسپتال کی سہولیات وغیرہ) حکام کے نوٹس میں آئے اور حل ہوئے۔ وہ ایک ایسے صحافی ہیں جو صرف خبر دینے تک محدود نہیں رہتے بلکہ مسائل کے حل کے لیے بھی آواز اٹھاتے ہیں۔
+        2007ء میں روزنامہ جنگ کے نمائندہ کے طور پر صحافت کا آغاز کیا۔ وہ اب ٹی وی چینل 5 کے رپورٹر بھی ہیں، جہاں سے علاقائی مسائل، خبریں، ترقیاتی کام اور سماجی واقعات کی کوریج کرتے ہیں۔ ان کی صحافت علاقے کی آواز کو قومی سطح تک پہنچانے میں اہم کردار ادا کر رہی ہے۔
       </p>
     </section>
 
-    <section id="services">
+    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="900">
       <h2 id="services-title">دیہات اور علاقے کے لیے قربانیاں اور خدمات</h2>
       <p class="bio" id="services-text1">
-        محمد اطہر ندیم صاحب کی زندگی خدمت خلق کا ایک روشن باب ہے۔ انہوں نے اپنی ذاتی زمین سے قبرستان کے لیے دو کنال مکمل طور پر عطیہ کر دیں تاکہ علاقے کے لوگوں کو تدفین کی مناسب اور باعزت جگہ میسر ہو۔ مسجد کی تعمیر، توسیع، مرمت اور ضروری سامان کی فراہمی میں انہوں نے مالی اور جسمانی محنت دونوں کی۔ مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام کے لیے زمین وقف کی، عمارت بنوائی، طلبہ کے لیے سہولیات فراہم کیں اور آج بھی اس کی نگرانی کرتے ہیں۔ یہ تمام قربانیاں علاقے کی مذہبی اور سماجی ضروریات کو پورا کرنے میں انتہائی اہم ہیں۔ وہ ہر وقت لوگوں کے مسائل سننے، انہیں حل کرانے اور دیہات کی ترقی کے لیے تیار رہتے ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں سے محبت بہت گہری ہے۔
+        محمد اطہر ندیم صاحب ایک سمجھدار، فعال، شائستہ اور قابل اعتماد سماجی کارکن ہیں۔ ان کی شخصیت میں سادگی، ایمانداری اور لوگوں کی مدد کرنے کا گہرا جذبہ نمایاں ہے۔ انہوں نے اپنی ذاتی زمین سے <strong>قبرستان کے لیے دو کنال زمین</strong> مکمل طور پر عطیہ کی ہے۔ مسجد کی تعمیر و توسیع میں مالی اور عملی حصہ لیا اور مدرسہ تعلیم القرآن چیک نمبر 211/9R کے قیام، تعمیر اور ترقی کے لیے بھی زمین وقف کی۔ یہ تمام قربانیاں علاقے کی مذہبی، سماجی اور تدفین کی بنیادی ضروریات کو پورا کرنے میں کلیدی کردار ادا کر رہی ہیں۔
       </p>
-      <p class="bio" id="services-text2">
-        2011ء سے وہ مختلف کمیونٹی سرگرمیوں میں مسلسل سرگرم ہیں۔ انسانی حقوق کی حفاظت، غریب اور مستحق خاندانوں کی مالی امداد، یتیموں اور بیواؤں کی کفالت، علاقائی ترقیاتی منصوبوں کی نگرانی، تنازعات کا پرامن اور عدل و انصاف کے ساتھ حل، اور سماجی ہم آہنگی کو فروغ دینا ان کے روزمرہ کے کاموں میں شامل ہے۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر وہ کسانوں کو منصفانہ دام دلواتے ہیں، ان کے حقوق کی حفاظت کرتے ہیں اور مقامی معیشت کو مستحکم بنانے میں اہم کردار ادا کر رہے ہیں۔ سیاسی میدان میں بھی وہ جناح کلب اور دیگر فورمز کے ذریعے فعال ہیں اور علاقے کی ترقی کے لیے ہر ممکن کوشش کرتے ہیں۔ ان کی تمام سرگرمیاں ان کے قابل اعتماد، مخلص اور خدمت خلق کے جذبے کی عکاسی کرتی ہیں۔
+      <p class="bio" id="services-text2" style="margin-top:50px;">
+        2011ء سے مختلف کمیونٹی اور سماجی سرگرمیوں میں مسلسل شامل ہیں جیسے حقوق انسانی کی حفاظت، سماجی خدمات، غریبوں کی مدد، علاقائی ترقیاتی کام اور تنازعات کے پرامن حل۔ غلہ منڈی فورٹ عباس میں زمزم کمیشن ایجنٹ کے طور پر کسانوں کی فصلوں کی منصفانہ خرید و فروخت میں مدد کرتے ہیں اور مقامی معیشت کو مضبوط بنانے کا اہم حصہ ہیں۔ وہ لوگوں کے مسائل کو سننے، ان کا حل نکالنے اور دیہات کی مجموعی فلاح و بہبود کے لیے ہمیشہ پیش پیش رہتے ہیں۔
       </p>
     </section>
 
-    <section id="gallery">
-      <h2>تصاویر – محمد اطہر ندیم صاحب</h2>
+    <section data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1200">
+      <h2>تصاویر</h2>
       <div class="gallery">
-        <img src="father2.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="father3.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="father4.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="father5.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="father6.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="father7.jpeg" alt="محمد اطہر ندیم صاحب" loading="lazy">
-        <img src="image(20).jpg" alt="محمد اطہر ندیم صاحب" loading="lazy">
+        <img src="father2.jpeg" alt="محمد اطہر ندیم تصویر 1" loading="lazy">
+        <img src="father3.jpeg" alt="محمد اطہر ندیم تصویر 2" loading="lazy">
+        <img src="father4.jpeg" alt="محمد اطہر ندیم تصویر 3" loading="lazy">
+        <img src="father5.jpeg" alt="محمد اطہر ندیم تصویر 4" loading="lazy">
+        <img src="father6.jpeg" alt="محمد اطہر ندیم تصویر 5" loading="lazy">
+        <img src="father7.jpeg" alt="محمد اطہر ندیم تصویر 6" loading="lazy">
+        <img src="image(20).jpg" alt="محمد اطہر ندیم اضافی تصویر" loading="lazy">
       </div>
     </section>
 
   </div>
 
-  <footer>
-    <p id="doa">اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
-    <p id="copy">© 2026 – تیار کردہ: athar-nadeem</p>
+  <footer data-aos="fade-up" data-aos-duration="1400">
+    <p id="footer-doa">اللہ تعالیٰ محمد اطہر ندیم صاحب کو صحت، تندرستی، خوشحالی، لمبی عمر اور مزید ترقی عطا فرمائے۔ آمین۔</p>
+    <p id="footer-copy">© 2026 – تیار کردہ: athar-nadeem</p>
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    function typeWriter(el, text, speed = 25, callback = null) {
-      el.classList.add('typing');
-      el.innerHTML = '';
+    AOS.init({ once: true, duration: 1100, easing: 'ease-out', offset: 150 });
+  </script>
+
+  <!-- Typewriter Script (آہستہ رفتار) -->
+  <script>
+    function typeWriter(element, text, speed = 22, callback = null) {
+      element.classList.add('typing');
+      element.innerHTML = '';
       let i = 0;
       const interval = setInterval(() => {
         if (i < text.length) {
-          el.innerHTML += text.charAt(i);
+          element.innerHTML += text.charAt(i);
           i++;
         } else {
           clearInterval(interval);
-          el.classList.remove('typing');
+          element.classList.remove('typing');
           if (callback) callback();
         }
       }, speed);
     }
 
-    function startChain() {
-      typeWriter(document.getElementById('header-title'), document.getElementById('header-title').textContent.trim(), 22, () => {
-        typeWriter(document.getElementById('header-subtitle'), document.getElementById('header-subtitle').textContent.trim(), 22, () => {
-          document.getElementById('intro').classList.add('active');
-          typeWriter(document.getElementById('intro-title'), document.getElementById('intro-title').textContent.trim(), 22, () => {
-            typeWriter(document.getElementById('intro-text'), document.getElementById('intro-text').textContent.trim(), 28, () => {
-              document.getElementById('roles').classList.add('active');
-              typeWriter(document.getElementById('roles-title'), document.getElementById('roles-title').textContent.trim(), 22, () => {
-                const lis = document.querySelectorAll('#roles-list li');
-                let idx = 0;
-                function nextLi() {
-                  if (idx < lis.length) {
-                    typeWriter(lis[idx], lis[idx].textContent.trim(), 25, () => {
-                      idx++;
-                      nextLi();
-                    });
-                  } else {
-                    document.getElementById('media').classList.add('active');
-                    typeWriter(document.getElementById('media-title'), document.getElementById('media-title').textContent.trim(), 22, () => {
-                      typeWriter(document.getElementById('media-text'), document.getElementById('media-text').textContent.trim(), 28, () => {
-                        document.getElementById('services').classList.add('active');
-                        typeWriter(document.getElementById('services-title'), document.getElementById('services-title').textContent.trim(), 22, () => {
-                          typeWriter(document.getElementById('services-text1'), document.getElementById('services-text1').textContent.trim(), 28, () => {
-                            typeWriter(document.getElementById('services-text2'), document.getElementById('services-text2').textContent.trim(), 28, () => {
-                              document.getElementById('gallery').classList.add('active');
-                            });
-                          });
-                        });
-                      });
-                    });
-                  }
-                }
-                nextLi();
-              });
-            });
-          });
-        });
-      });
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.typed) {
+          const el = entry.target;
+          const text = el.textContent.trim();
+          el.dataset.typed = 'true';
 
-    window.onload = startChain;
+          if (el.id === 'roles-list') {
+            const items = el.querySelectorAll('li');
+            let index = 0;
+            function typeNext() {
+              if (index < items.length) {
+                typeWriter(items[index], items[index].textContent.trim(), 25, () => {
+                  index++;
+                  typeNext();
+                });
+              }
+            }
+            typeNext();
+          } else {
+            const speed = (el.tagName === 'H1' || el.tagName === 'H2') ? 18 : 22;
+            typeWriter(el, text, speed);
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('#header-title, #header-subtitle, #intro-title, #intro-text, #roles-title, #roles-list, #media-title, #media-text, #services-title, #services-text1, #services-text2, '#footer-doa, #footer-copy').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 
 </body>
